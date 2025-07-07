@@ -24,11 +24,11 @@ function App() {
   }
   return (
     <>
-      <div className="flex flex-col min-h-screen">
+      <div className="bg-slate-300 flex flex-col min-h-screen dark:bg-slate-900">
 
         <main className="flex-1">
           <div className="mt-16 w-full flex justify-center items-center ">
-            <Button className={theme == "dark" ? "hidden" : "inline-flex"} size="lg" variant="outline" onClick={toggleTheme}>
+            <Button className={theme == "dark" ? "hidden" : "inline-flex bg-slate-300"} size="lg" variant="outline" onClick={toggleTheme}>
               <span className="text-2xl"><Moon /></span>
               toggle dark theme
             </Button>
