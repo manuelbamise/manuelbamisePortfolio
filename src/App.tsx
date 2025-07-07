@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button } from "./components/ui/button";
 import { useTheme } from "./components/use-theme"
 import type { Theme } from "./components/theme-provider";
-import { Dot } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 
 
 
@@ -28,10 +28,16 @@ function App() {
 
         <main className="flex-1">
           <div className="mt-16 w-full flex justify-center items-center ">
-            <Button size="lg" variant="outline" onClick={toggleTheme}>
-              <span className="text-2xl"><Dot /></span>
-              toggle theme
+            <Button className={theme == "dark" ? "hidden" : "inline-flex"} size="lg" variant="outline" onClick={toggleTheme}>
+              <span className="text-2xl"><Moon /></span>
+              toggle dark theme
             </Button>
+
+            <Button className={theme == "light" ? "hidden" : "inline-flex"} size="lg" variant="outline" onClick={toggleTheme}>
+              <Sun />
+              toggle light theme
+            </Button>
+
           </div>
 
           <div className="mt-8 mx-5 flex justify-between">
@@ -61,13 +67,13 @@ function App() {
             <div>Project1, Project2, Project3</div>
           </div>
 
-        </main>
+        </main >
 
         <div className="">
           <div>Footer</div>
           <div>footer info</div>
         </div>
-      </div>
+      </div >
     </>
   )
 }
