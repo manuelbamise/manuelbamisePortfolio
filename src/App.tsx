@@ -4,6 +4,7 @@ import { useTheme } from "./components/use-theme"
 import type { Theme } from "./components/theme-provider";
 import { Moon, Sun } from "lucide-react";
 import { Card } from "./components/ui/card";
+import Carousel from "./components/CarouselSection";
 
 
 
@@ -13,16 +14,37 @@ function App() {
   const [themeChoice, setThemeChoice] = useState<Theme>("dark");
   const { setTheme, theme } = useTheme()
 
+  const [index, setIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const images = [
+    { url: "https://placehold.co/400", rotate: "-rotate-12" },
+    { url: "https://placehold.co/400/green/white", rotate: "rotate-6" },
+    { url: "https://placehold.co/400/red/white", rotate: "-rotate-3" },
+    { url: "https://placehold.co/400/blue/white", rotate: "rotate-12" },
+  ];
+
   useEffect(() => {
     setTheme(themeChoice);
     console.log(theme);
 
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % images.length);
+        setIsAnimating(false);
+      }, 300); // timing for shrink before change;
+    }, 3000); // every 3 seconds
 
-  }, [themeChoice, setTheme, theme])
+    return () => clearInterval(interval); // cleanup on unmount
+  }, [themeChoice, setTheme, theme, images.length])
 
   const toggleTheme = () => {
     setThemeChoice((prev) => (prev === "dark" ? "light" : "dark"))
   }
+
+  const { url, rotate } = images[index];
+
   return (
     <>
       <div className="bg-slate-300 flex flex-col min-h-screen dark:bg-slate-900">
@@ -41,15 +63,16 @@ function App() {
 
           </div>
 
-          <div className="mx-20 mt-8 flex items-center justify-around">
+          <div className="mx-20 mt-8 flex items-center">
             <div className="mt-4 w-[50%]">
               <div className="text-5xl mb-2">hi!! I;m hdsjebte</div>
               <div>Creating innovative solutions and captivating designs.
                 University student by day, visionary creator by nighI'm a Software Engineer with 3+ years of experience building scalable, secure, and high-performance server-side applications using Node.js, Express.js, and Nest.js. I specialize in creating efficient APIs and microservices, and have contributed to various open-source projects. I'm passionate about making a positive impact and continuously expanding my skills in software engineering.</div>
             </div>
             <div className=" w-[400px]">
-              <Card className="p-4 rounded-none w-full">
-                <img src="https://placehold.co/400" alt="placeholderImage" />
+              <Card className={`p-4 rounded-none w-full shadow-xl dark:shadow-white ${rotate} transition-all duration-300 ease-in-out ${isAnimating ? "scale-90 opacity-0" : "scale-100 opacity-100"
+                }`}>
+                <img src={url} alt="placeholderImage" />
               </Card>
             </div>
           </div>
@@ -59,7 +82,7 @@ function App() {
           </div>
 
           <div className="mt-13">
-            carousel goes here
+            <Carousel />
           </div>
 
           <div className="mt-13">
