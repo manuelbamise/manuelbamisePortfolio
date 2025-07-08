@@ -11,29 +11,34 @@ import nestjsSvg from "../assets/svg/nestjs.svg"
 import tailwindSvg from "../assets/svg/tailwind.svg"
 import ubuntuSvg from "../assets/svg/ubuntu.svg"
 import vueSvg from "../assets/svg/vue.svg"
+import prismaSvg from "../assets/svg/prisma.svg"
 
 
 const MarqueeSection = () => {
 
   return (
     <>
-      <Marquee className=" outline outline-black bg-white">
+      <Marquee className=" outline outline-black bg-white" pauseOnHover={true}>
         <div className="flex w-[1800px] items-center justify-between">
 
-          <img src={reactSvg} alt="React svg" />
-
-          <img src={nodeSvg} alt="node svg" />
           <img src={typescriptSvg} alt="typescript svg" />
 
+          <img src={reactSvg} alt="React svg" />
+          <img src={vueSvg} alt="vuejs svg" />
+          <img src={tailwindSvg} alt="tailwind svg" />
+
+          <img src={nodeSvg} alt="node svg" />
           <img src={expressSvg} alt="express svg" />
+          <img src={nestjsSvg} alt="nestjs svg" />
+
           <img src={postgresSvg} alt="postgres svg" />
-          <img src={neovimSvg} alt="postgres svg" />
-          <img src={gitSvg} alt="postgres svg" />
-          <img src={githubSvg} alt="postgres svg" />
-          <img src={nestjsSvg} alt="postgres svg" />
-          <img src={tailwindSvg} alt="postgres svg" />
-          <img src={ubuntuSvg} alt="postgres svg" />
-          <img src={vueSvg} alt="postgres svg" />
+          <img src={prismaSvg} alt="prisma svg" />
+
+          <img src={gitSvg} alt="git svg" />
+          <img src={githubSvg} alt="github svg" />
+
+          <img src={neovimSvg} alt="neovim svg" />
+          <img src={ubuntuSvg} alt="ubuntu svg" />
 
         </div>
       </Marquee>
