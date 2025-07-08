@@ -4,7 +4,7 @@ import { useTheme } from "./components/use-theme"
 import type { Theme } from "./components/theme-provider";
 import { Moon, Sun } from "lucide-react";
 import { Card } from "./components/ui/card";
-import Carousel from "./components/CarouselSection";
+import MarqueeSection from "./components/MarqueeSection";
 
 
 
@@ -82,7 +82,7 @@ function App() {
           </div>
 
           <div className="mt-13">
-            <Carousel />
+            <MarqueeSection />
           </div>
 
           <div className="mt-13">
