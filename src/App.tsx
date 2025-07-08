@@ -6,7 +6,7 @@ import { Moon, Sun } from "lucide-react";
 import { Card } from "./components/ui/card";
 import MarqueeSection from "./components/MarqueeSection";
 import ExperienceSection from "./components/ExperienceSection";
-
+import img1 from "./assets/img/img001.jpeg"
 
 
 
@@ -19,10 +19,10 @@ function App() {
   const [isAnimating, setIsAnimating] = useState(false);
 
   const images = [
-    { url: "https://placehold.co/400", rotate: "-rotate-12" },
-    { url: "https://placehold.co/400/green/white", rotate: "rotate-6" },
-    { url: "https://placehold.co/400/red/white", rotate: "-rotate-3" },
-    { url: "https://placehold.co/400/blue/white", rotate: "rotate-12" },
+    { url: img1, rotate: "-rotate-12" },
+    { url: img1, rotate: "rotate-6" },
+    { url: img1, rotate: "-rotate-3" },
+    { url: img1, rotate: "rotate-12" },
   ];
 
   useEffect(() => {
