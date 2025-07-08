@@ -1,10 +1,8 @@
 import { Button } from "./ui/button"
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -16,25 +14,20 @@ const ExperienceCards = () => {
     <Dialog>
       <form>
         <DialogTrigger asChild>
-          <Button variant="outline">Open Dialog</Button>
+          <Button variant="outline">see more</Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
+        <DialogContent className="sm:max-w-[425px] h-[50vh]">
           <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
-            <DialogDescription>
-              Make changes to your profile here. Click save when you&apos;re
-              done.
-            </DialogDescription>
+            <DialogDescription>Jan 22 2024 - present</DialogDescription>
+            <DialogTitle>@Bimpe</DialogTitle>
           </DialogHeader>
-          <div className="grid gap-4">
-            <div> Some text</div>
+          <div className="outline outline-black">
+            <ul className="text-lg flex-col justify-between items-center"> <li> Architected and implemented scalable microservices using Node.js </li>
+
+              <li>Mentored junior developers and conducted technical interviews </li>
+
+              <li>Collaborated with product managers to define technical specifications </li> </ul>
           </div>
-          <DialogFooter>
-            <DialogClose asChild>
-              <Button variant="outline">Cancel</Button>
-            </DialogClose>
-            <Button type="submit">Save changes</Button>
-          </DialogFooter>
         </DialogContent>
       </form>
     </Dialog>
