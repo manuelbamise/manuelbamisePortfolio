@@ -12,24 +12,25 @@ const ExperienceCards = () => {
 
   return (
     <Dialog>
-      <form>
-        <DialogTrigger asChild>
-          <Button variant="outline">see more</Button>
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px] h-[50vh]">
-          <DialogHeader>
-            <DialogDescription>Jan 22 2024 - present</DialogDescription>
-            <DialogTitle>@Bimpe</DialogTitle>
-          </DialogHeader>
-          <div className="outline outline-black">
-            <ul className="text-lg flex-col justify-between items-center"> <li> Architected and implemented scalable microservices using Node.js </li>
+      <DialogTrigger asChild>
+        <Button variant="outline">see more</Button>
+      </DialogTrigger>
 
-              <li>Mentored junior developers and conducted technical interviews </li>
+      <DialogContent className="sm:max-w-[425px] h-[50vh]"  >
+        {/* <DialogHeader className="outline outline-black"> */}
+        {/*   <DialogDescription>Jan 22 2024 - present</DialogDescription> */}
+        {/*   <DialogTitle>@Bimpe</DialogTitle> */}
+        {/* </DialogHeader> */}
+        <div className="outline outline-black">
+          <ul className="text-lg flex-col justify-between items-center"> <li> Architected and implemented scalable microservices using Node.js </li>
 
-              <li>Collaborated with product managers to define technical specifications </li> </ul>
-          </div>
-        </DialogContent>
-      </form>
+            <li>Mentored junior developers and conducted technical interviews </li>
+
+            <li>Collaborated with product managers to define technical specifications </li> </ul>
+        </div>
+
+        <div className="outline outline-black">this is something on the next line</div>
+      </DialogContent>
     </Dialog>
   )
 }
