@@ -18,8 +18,8 @@ const MarqueeSection = () => {
 
   return (
     <>
-      <Marquee className=" outline outline-black bg-white" pauseOnHover={true}>
-        <div className="flex w-[1800px] items-center justify-between">
+      <Marquee className=" bg-white" pauseOnHover={true}>
+        <div className="flex w-[100vw] items-center justify-around">
 
           <img src={typescriptSvg} alt="typescript svg" />
 
