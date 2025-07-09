@@ -44,7 +44,6 @@ const ProjectSection = () => {
 
 
 
-    <div>This si the project section</div>
   </>)
 }
 

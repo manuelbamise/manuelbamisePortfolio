@@ -9,7 +9,7 @@ const ExperienceSection = () => {
         <div className="text-3xl">experience </div>
         <div>here are the places i've worked at</div>
       </div>
-      <div className="flex gap-10 flex-wrap mt-4">
+      <div className="flex items-center justify-center gap-10 flex-wrap mt-4">
 
         <Card className=" w-[15vw]">
           <CardHeader>

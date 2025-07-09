@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     setTheme(themeChoice);
-    console.log(theme);
+    // console.log(theme);
 
     const interval = setInterval(() => {
       setIsAnimating(true);
@@ -49,7 +49,7 @@ function App() {
 
   return (
     <>
-      <div className=" flex-col  dark:bg-stone-950">
+      <div className=" flex-col  dark:bg-stone-950 mb-4">
 
         <main className="flex-1">
           <div className="mt-10 w-full flex justify-center items-center ">
@@ -93,14 +93,13 @@ function App() {
 
           <div className="mt-13 mx-20">
             <ProjectSection />
-
           </div>
 
         </main >
 
-        <div className="">
+        <div className="flex items-center justify-center mt-13">
           <div>Footer</div>
-          <div>footer info</div>
+          <div>built my manuelbamise...links </div>
         </div>
       </div >
     </>
