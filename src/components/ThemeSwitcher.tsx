@@ -28,7 +28,7 @@ const ThemeSwitcher = () => {
 
 
   return (<>
-    <div className="mt-10 w-full flex justify-center items-center ">
+    <div className="w-full flex justify-center items-center ">
       <Button className={theme == "dark" ? "hidden" : "inline-flex"} size="lg" variant="outline" onClick={toggleTheme}>
         <span className="text-2xl"><Moon /></span>
       </Button>

@@ -29,17 +29,17 @@ export const GlassPillNav: React.FC = () => {
       <div className="bg-white/10 backdrop-blur-md border border-white/30 rounded-lg p-3 flex gap-2 shadow-lg">
         {/* <ThemeSwitcher /> */}
         {navItems.map((item) => item.type == 'tab' ? (
-
-          <button
-            key={item.label}
-            onClick={() => setActiveTab(item.label as Tab)}
-            className={`px-6 py-3 rounded-lg transition-all duration-300 text-sm font-semibold
-              ${activeTab === item.label
-                ? 'bg-gray-700/50 text-white dark:text-black dark:bg-white shadow-inner backdrop-blur-md'
-                : 'text-black dark:text-white hover:bg-gray-700/10'}`}
+          <div key={item.label}
           >
-            {item.label}
-          </button>
+            <button
+              onClick={() => setActiveTab(item.label as Tab)}
+              className={`px-6 py-3 rounded-lg transition-all duration-300 text-sm font-semibold
+              ${activeTab === item.label
+                  ? 'bg-gray-700/50 text-white dark:text-black dark:bg-white shadow-inner backdrop-blur-md'
+                  : 'text-black dark:text-white hover:bg-gray-700/10'}`}
+            >
+              {item.label}
+            </button></div>
         ) : <div key={item.label}>{item.component}</div>)}
       </div>
     </div>
