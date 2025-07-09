@@ -10,7 +10,7 @@ const ProjectSection = () => {
         <div className="text-3xl">projects</div>
         <div>here's what i've been working on</div>
       </div>
-      <div className="flex gap-10 flex-wrap mt-4 justify-center items-center outline">
+      <div className="flex gap-10 flex-wrap mt-4 justify-center items-center ">
         <Card>
 
           <CardHeader>
