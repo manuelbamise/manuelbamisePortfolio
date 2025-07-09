@@ -8,6 +8,7 @@ import MarqueeSection from "./components/MarqueeSection";
 import ExperienceSection from "./components/ExperienceSection";
 import img1 from "./assets/img/img001.jpeg"
 import ProjectSection from "./components/ProjectSection";
+import { GlassPillNav } from "./components/GlassPillNav";
 
 
 
@@ -64,7 +65,7 @@ function App() {
             </Button>
 
           </div>
-
+          <GlassPillNav />
           <div className="mx-20 mt-8 flex items-center">
             <div className="mt-4 w-[50%]">
               <div className="text-5xl mb-2">hi!! I;m hdsjebte</div>
