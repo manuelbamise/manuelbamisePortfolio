@@ -4,7 +4,7 @@ import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { ThemeProvider } from './components/theme-provider.tsx'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.tsx'
+// import App from './App.tsx'
 
 
 // Import the generated route tree
