@@ -1,21 +1,13 @@
 import { useEffect, useState } from "react";
-import { Button } from "./components/ui/button";
-import { useTheme } from "./components/use-theme"
-import type { Theme } from "./components/theme-provider";
-import { Moon, Sun } from "lucide-react";
 import { Card } from "./components/ui/card";
 import MarqueeSection from "./components/MarqueeSection";
 import ExperienceSection from "./components/ExperienceSection";
 import img1 from "./assets/img/img001.jpeg"
 import ProjectSection from "./components/ProjectSection";
-import { GlassPillNav } from "./components/GlassPillNav";
 
 
 
 function App() {
-
-  const [themeChoice, setThemeChoice] = useState<Theme>("dark");
-  const { setTheme, theme } = useTheme()
 
   const [index, setIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -28,8 +20,6 @@ function App() {
   ];
 
   useEffect(() => {
-    setTheme(themeChoice);
-    // console.log(theme);
 
     const interval = setInterval(() => {
       setIsAnimating(true);
@@ -40,11 +30,7 @@ function App() {
     }, 3000); // every 3 seconds
 
     return () => clearInterval(interval); // cleanup on unmount
-  }, [themeChoice, setTheme, theme, images.length])
-
-  const toggleTheme = () => {
-    setThemeChoice((prev) => (prev === "dark" ? "light" : "dark"))
-  }
+  }, [images.length])
 
   const { url, rotate } = images[index];
 
@@ -53,19 +39,7 @@ function App() {
       <div className=" flex-col  dark:bg-stone-950 mb-4">
 
         <main className="flex-1">
-          <div className="mt-10 w-full flex justify-center items-center ">
-            <Button className={theme == "dark" ? "hidden" : "inline-flex"} size="lg" variant="outline" onClick={toggleTheme}>
-              <span className="text-2xl"><Moon /></span>
-              toggle dark theme
-            </Button>
 
-            <Button className={theme == "light" ? "hidden" : "inline-flex"} size="lg" variant="outline" onClick={toggleTheme}>
-              <Sun />
-              toggle light theme
-            </Button>
-
-          </div>
-          <GlassPillNav />
           <div className="mx-20 mt-8 flex items-center">
             <div className="mt-4 w-[50%]">
               <div className="text-5xl mb-2">hi!! I;m hdsjebte</div>
