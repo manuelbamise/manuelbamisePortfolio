@@ -1,20 +1,22 @@
 
 import { useState } from 'react';
 import ThemeSwitcher from './ThemeSwitcher';
+import { Link } from '@tanstack/react-router';
 
 type Tab = 'Home' | 'Projects' | 'Video content' | 'Blog' | 'ThemeSwitcher';
 
 type navItem = {
   label: string;
   type: 'tab' | 'custom';
+  route?: string;
   component?: React.ReactNode;
 };
 
 const navItems: navItem[] = [
-  { label: 'Home', type: 'tab' },
-  { label: 'Projects', type: 'tab' },
-  { label: 'Video content', type: 'tab' },
-  { label: 'Blog', type: 'tab' },
+  { label: 'Home', type: 'tab', route: '/' },
+  { label: 'Projects', type: 'tab', route: '/projects' },
+  { label: 'Video content', type: 'tab', route: '/video-content' },
+  { label: 'Blog', type: 'tab', route: '/blog' },
   { label: 'ThemeSwitcher', type: 'custom', component: <ThemeSwitcher /> },
 ]
 
@@ -30,15 +32,16 @@ export const GlassPillNav: React.FC = () => {
         {navItems.map((item) => item.type == 'tab' ? (
           <div key={item.label}
           >
-            <button
+            <div
               onClick={() => setActiveTab(item.label as Tab)}
               className={`px-6 py-3 rounded-lg transition-all duration-300 text-sm font-semibold
               ${activeTab === item.label
-                  ? 'bg-gray-700/50 text-white dark:text-black dark:bg-white shadow-inner backdrop-blur-md'
+                  ? 'bg-gray-700/50 bg-none text-black dark:text-black dark:bg-white shadow-inner backdrop-blur-md'
                   : 'text-black dark:text-white hover:bg-gray-700/10'}`}
             >
-              {item.label}
-            </button></div>
+              <Link to={item.route}>{item.label}</Link>
+              {/* {item.label} */}
+            </div></div>
         ) : <div key={item.label}>{item.component}</div>)}
       </div>
     </div>
