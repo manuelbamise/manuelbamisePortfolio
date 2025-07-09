@@ -34,13 +34,11 @@ export const GlassPillNav: React.FC = () => {
           >
             <div
               onClick={() => setActiveTab(item.label as Tab)}
-              className={`px-6 py-3 rounded-lg transition-all duration-300 text-sm font-semibold
-              ${activeTab === item.label
-                  ? 'bg-gray-700/50 bg-none text-black dark:text-black dark:bg-white shadow-inner backdrop-blur-md'
-                  : 'text-black dark:text-white hover:bg-gray-700/10'}`}
+              className={` py-3 rounded-lg transition-all duration-300 text-sm font-semibold               ${activeTab === item.label
+                ? 'bg-gray-700/50 bg-none text-white dark:text-black dark:bg-white shadow-inner backdrop-blur-md'
+                : 'text-black dark:text-white dark:hover:bg-white/10 hover:bg-gray-700/10'}`}
             >
-              <Link to={item.route}>{item.label}</Link>
-              {/* {item.label} */}
+              <Link to={item.route} className='w-full h-full px-6 py-3.5 '>{item.label}</Link>
             </div></div>
         ) : <div key={item.label}>{item.component}</div>)}
       </div>
