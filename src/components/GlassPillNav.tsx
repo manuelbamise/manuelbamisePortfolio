@@ -19,7 +19,6 @@ const navItems: navItem[] = [
 ]
 
 
-// const tabs: Tab[] = ['Home', 'Projects', 'Video content', 'Blog'];
 
 export const GlassPillNav: React.FC = () => {
   const [activeTab, setActiveTab] = useState<Tab>('Home');
@@ -27,7 +26,7 @@ export const GlassPillNav: React.FC = () => {
   return (
     <div className="flex items-center justify-center py-6 sticky top-0 z-4">
       <div className="bg-white/10 backdrop-blur-md border border-white/30 rounded-lg p-3 flex gap-2 shadow-lg">
-        {/* <ThemeSwitcher /> */}
+
         {navItems.map((item) => item.type == 'tab' ? (
           <div key={item.label}
           >
