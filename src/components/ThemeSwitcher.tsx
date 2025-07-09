@@ -23,11 +23,11 @@ const ThemeSwitcher = () => {
 
   return (<>
     <div className="w-full flex justify-center items-center ">
-      <Button className={theme == "dark" ? "hidden" : "inline-flex bg-black hover:bg-black/10 text-white"} size="lg" variant="outline" onClick={toggleTheme}>
+      <Button className={theme == "dark" ? "hidden" : "inline-flex  bg-black hover:bg-black/10 text-white"} size="lg" variant="outline" onClick={toggleTheme}>
         <span className="text-2xl"><Moon /></span>
       </Button>
 
-      <Button className={theme == "light" ? "hidden" : "inline-flex bg-red-700"} size="lg" variant="outline" onClick={toggleTheme}>
+      <Button className={theme == "light" ? "hidden" : "inline-flex dark:bg-white dark:text-black dark:hover:text-white "} size="lg" variant="outline" onClick={toggleTheme}>
         <Sun />
       </Button>
 

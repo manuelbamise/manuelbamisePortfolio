@@ -1,6 +1,7 @@
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import img from "../assets/img/img001.jpeg";
+import { ArrowRight } from "lucide-react";
 
 const ProjectSection = () => {
 
@@ -21,7 +22,7 @@ const ProjectSection = () => {
           <CardContent>
             <div className="text-2xl font-bold">Lopejnfnan</div>
             <div className="text-gray-500 text-sm">lorem ipsum djas fhdga hghs gebfh a dfjnf eeghbeg  fhsf shf sfhg efjs f sf</div>
-            <Button className="mt-4 text-lg p-6" variant="secondary">view project -- </Button>
+            <Button className="mt-4 text-lg p-6" variant="secondary">view project <ArrowRight /> </Button>
           </CardContent>
         </Card>
 
