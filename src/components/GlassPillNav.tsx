@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ThemeSwitcher from './ThemeSwitcher';
 import { Link, useRouter } from '@tanstack/react-router';
 
@@ -10,6 +10,24 @@ import { Link, useRouter } from '@tanstack/react-router';
 export const GlassPillNav: React.FC = () => {
 
   type Tab = 'Home' | 'Projects' | 'Video content' | 'Blog' | 'ThemeSwitcher';
+
+  const [activeTab, setActiveTab] = useState<Tab>('Home');
+
+
+  const router = useRouter()
+  const location = router.state.location.pathname;
+
+
+
+
+  useEffect(() => {
+    navItems.forEach(item => {
+      if (item.type === 'tab' && location === item.route) {
+        setActiveTab(item.label as Tab);
+      }
+    });
+  })
+
 
   type navItem = {
     label: string;
@@ -27,12 +45,6 @@ export const GlassPillNav: React.FC = () => {
   ]
 
 
-  const [activeTab, setActiveTab] = useState<Tab>('Home');
-
-
-  const router = useRouter()
-  const location = router.state.location.pathname;
-
 
 
   return (
@@ -44,7 +56,7 @@ export const GlassPillNav: React.FC = () => {
           >
             <div
               onClick=
-              {() => (location == item.route ? setActiveTab(item.label as Tab) : console.log('error with tab'))}
+              {() => (setActiveTab(item.label as Tab))}
               className={` py-3 rounded-lg transition-all duration-300 text-sm font-semibold               ${activeTab === item.label
                 ? 'bg-gray-700/50 bg-none text-white dark:text-black dark:bg-white shadow-inner backdrop-blur-md'
                 : 'text-black dark:text-white dark:hover:bg-white/10 hover:bg-gray-700/10'}`}
