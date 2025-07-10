@@ -3,7 +3,7 @@
 const Footer = () => {
   return (
 
-    <div className="">Footer for the sinjndjsd</div>
+    <div className="outline">Footer for the sinjndjsd</div>
 
   )
 }

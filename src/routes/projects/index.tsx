@@ -8,6 +8,7 @@ import Footer from '../../components/Footer'
 
 
 
+
 export const Route = createFileRoute('/projects/')({
   component: RouteComponent,
 })
@@ -16,10 +17,10 @@ function RouteComponent() {
   return (
     <>
 
-      <div className='h-full flex-col'>
+      <div className='h-[85vh] flex-col-reverse items-center  justify-between outline outline-indigo-800 '>
 
 
-        <div className="flex gap-10 flex-wrap mt-4 justify-center items-center outline mx-20">
+        <div className="flex gap-10 flex-wrap justify-center items-center outline mx-20">
 
           {Projects && Projects.map((project) => (
 
@@ -50,8 +51,10 @@ function RouteComponent() {
 
         </div>
 
+        <div className='mx-20 flex justify-center items-center'>
+          <Footer />
 
-        <Footer />
+        </div>
 
       </div>
     </>
