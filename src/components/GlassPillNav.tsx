@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import ThemeSwitcher from './ThemeSwitcher';
 import { Link, useRouter } from '@tanstack/react-router';
 
@@ -19,16 +19,6 @@ export const GlassPillNav: React.FC = () => {
 
 
 
-
-  useEffect(() => {
-    navItems.forEach(item => {
-      if (item.type === 'tab' && location === item.route) {
-        setActiveTab(item.label as Tab);
-      }
-    });
-  })
-
-
   type navItem = {
     label: string;
     type: 'tab' | 'custom';
@@ -36,15 +26,22 @@ export const GlassPillNav: React.FC = () => {
     component?: React.ReactNode;
   };
 
-  const navItems: navItem[] = [
+  const navItems: navItem[] = useMemo(() => [
     { label: 'Home', type: 'tab', route: '/' },
     { label: 'Projects', type: 'tab', route: '/projects' },
     { label: 'Video content', type: 'tab', route: '/video-content' },
     { label: 'Blog', type: 'tab', route: '/blog' },
     { label: 'ThemeSwitcher', type: 'custom', component: <ThemeSwitcher /> },
-  ]
+  ], [])
 
+  useEffect(() => {
+    navItems.forEach((item) => {
+      if (location === item.route) {
+        setActiveTab(item.label as Tab)
+      }
+    })
 
+  }, [location, navItems])
 
 
   return (

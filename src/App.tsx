@@ -4,7 +4,6 @@ import MarqueeSection from "./components/MarqueeSection";
 import ExperienceSection from "./components/ExperienceSection";
 import img1 from "./assets/img/img001.jpeg"
 import ProjectSection from "./components/ProjectSection";
-import projects from './lib/json/projects.json'
 
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
 
   useEffect(() => {
 
-    console.log(projects.length);
     const interval = setInterval(() => {
       setIsAnimating(true);
       setTimeout(() => {
