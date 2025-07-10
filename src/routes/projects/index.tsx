@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import Projects from '../../lib/json/projects.json'
 import { Card, CardContent, CardHeader } from '../../components/ui/card'
 import { Button } from '../../components/ui/button'
@@ -30,10 +30,15 @@ function RouteComponent() {
             <CardContent>
               <div className="text-2xl font-bold">{project.projectName}</div>
               <div className="text-gray-500 text-sm">{project.shortText}</div>
-              <Button className="mt-4 text-lg p-6" variant="secondary">view project <ArrowRight /> </Button>
+              <Button className="mt-4 text-lg p-6" variant="secondary"><Link to={`/projects/${project.projectName}`}>view project  <ArrowRight /> </Link></Button>
             </CardContent>
           </Card>)
 
+          //
+          // <div key={project.key}>
+          //   <div>{project.projectName}</div>
+          //   <div>{project.shortText}</div>
+          // </div>
         ))}
 
       </div>
