@@ -15,37 +15,44 @@ function RouteComponent() {
   return (
     <>
 
-
-      <div className="flex gap-10 flex-wrap mt-4 justify-center items-center ">
-
-        {Projects && Projects.map((project) => (
+      <div className='h-full'>
 
 
-          (<Card key={project.key}>
-            <CardHeader>
-              <div className="w-[7vw]">
-                <img src={img} />
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{project.projectName}</div>
-              <div className="text-gray-500 text-sm">{project.shortText}</div>
-              <Button className="mt-4 text-lg p-6" variant="secondary">
-                <Link
-                  to='/projects/$projectName'
-                  params={
-                    { projectName: project.projectName }
-                  }
-                >view project  <ArrowRight />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>)
+        <div className="flex gap-10 flex-wrap mt-4 justify-center items-center outline mx-20">
 
-        ))}
+          {Projects && Projects.map((project) => (
+
+
+            (<Card key={project.key}>
+              <CardHeader>
+                <div className="w-[7vw]">
+                  <img src={img} />
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">{project.projectName}</div>
+                <div className="text-gray-500 text-sm">{project.shortText}</div>
+                <Button className="mt-4 text-lg p-6" variant="secondary" asChild>
+                  <Link
+                    to='/projects/$projectName'
+                    // className='w-full'
+                    params={
+                      { projectName: project.projectName }
+                    }
+                  >view project <span><ArrowRight /> </span>
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>)
+
+          ))}
+
+        </div>
+
+
+
 
       </div>
-
     </>
   )
 }

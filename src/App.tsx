@@ -3,7 +3,6 @@ import { Card } from "./components/ui/card";
 import MarqueeSection from "./components/MarqueeSection";
 import ExperienceSection from "./components/ExperienceSection";
 import img1 from "./assets/img/img001.jpeg"
-import ProjectSection from "./components/ProjectSection";
 
 
 function App() {
@@ -63,10 +62,6 @@ function App() {
 
           <div className="mt-13 mx-20">
             <ExperienceSection />
-          </div>
-
-          <div className="mt-13 mx-20">
-            <ProjectSection />
           </div>
 
         </main >
