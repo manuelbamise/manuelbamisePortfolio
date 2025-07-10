@@ -1,29 +1,39 @@
 
 import { useState } from 'react';
 import ThemeSwitcher from './ThemeSwitcher';
-import { Link } from '@tanstack/react-router';
+import { Link, useRouter } from '@tanstack/react-router';
 
-type Tab = 'Home' | 'Projects' | 'Video content' | 'Blog' | 'ThemeSwitcher';
 
-type navItem = {
-  label: string;
-  type: 'tab' | 'custom';
-  route?: string;
-  component?: React.ReactNode;
-};
-
-const navItems: navItem[] = [
-  { label: 'Home', type: 'tab', route: '/' },
-  { label: 'Projects', type: 'tab', route: '/projects' },
-  { label: 'Video content', type: 'tab', route: '/video-content' },
-  { label: 'Blog', type: 'tab', route: '/blog' },
-  { label: 'ThemeSwitcher', type: 'custom', component: <ThemeSwitcher /> },
-]
 
 
 
 export const GlassPillNav: React.FC = () => {
+
+  type Tab = 'Home' | 'Projects' | 'Video content' | 'Blog' | 'ThemeSwitcher';
+
+  type navItem = {
+    label: string;
+    type: 'tab' | 'custom';
+    route?: string;
+    component?: React.ReactNode;
+  };
+
+  const navItems: navItem[] = [
+    { label: 'Home', type: 'tab', route: '/' },
+    { label: 'Projects', type: 'tab', route: '/projects' },
+    { label: 'Video content', type: 'tab', route: '/video-content' },
+    { label: 'Blog', type: 'tab', route: '/blog' },
+    { label: 'ThemeSwitcher', type: 'custom', component: <ThemeSwitcher /> },
+  ]
+
+
   const [activeTab, setActiveTab] = useState<Tab>('Home');
+
+
+  const router = useRouter()
+  const location = router.state.location.pathname;
+
+
 
   return (
     <div className="flex items-center justify-center py-6 sticky top-0 z-4">
@@ -33,7 +43,8 @@ export const GlassPillNav: React.FC = () => {
           <div key={item.label}
           >
             <div
-              onClick={() => setActiveTab(item.label as Tab)}
+              onClick=
+              {() => (location == item.route ? setActiveTab(item.label as Tab) : console.log('error with tab'))}
               className={` py-3 rounded-lg transition-all duration-300 text-sm font-semibold               ${activeTab === item.label
                 ? 'bg-gray-700/50 bg-none text-white dark:text-black dark:bg-white shadow-inner backdrop-blur-md'
                 : 'text-black dark:text-white dark:hover:bg-white/10 hover:bg-gray-700/10'}`}
@@ -42,6 +53,6 @@ export const GlassPillNav: React.FC = () => {
             </div></div>
         ) : <div key={item.label}>{item.component}</div>)}
       </div>
-    </div>
+    </div >
   );
 };
