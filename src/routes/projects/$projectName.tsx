@@ -1,4 +1,4 @@
-import { createFileRoute, useRouter } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/projects/$projectName')({
   component: RouteComponent,
@@ -6,13 +6,20 @@ export const Route = createFileRoute('/projects/$projectName')({
 
 function RouteComponent() {
 
-  const route = useRouter()
-  const location = route.state.location.pathname
 
 
-  console.log(location)
 
 
   const { projectName } = Route.useParams()
-  return <div>Hello "/projects/${projectName}"!</div>
+  return <>
+
+
+    <div>
+
+
+      {projectName}
+    </div>
+
+
+  </>
 }

@@ -34,11 +34,6 @@ function RouteComponent() {
             </CardContent>
           </Card>)
 
-          //
-          // <div key={project.key}>
-          //   <div>{project.projectName}</div>
-          //   <div>{project.shortText}</div>
-          // </div>
         ))}
 
       </div>
