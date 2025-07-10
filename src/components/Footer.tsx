@@ -3,7 +3,7 @@
 const Footer = () => {
   return (
 
-    <div className="bottom-0 static">Footer for the sinjndjsd</div>
+    <div className="">Footer for the sinjndjsd</div>
 
   )
 }

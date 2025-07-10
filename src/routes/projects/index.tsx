@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader } from '../../components/ui/card'
 import { Button } from '../../components/ui/button'
 import img from '../../assets/img/img001.jpeg'
 import { ArrowRight } from 'lucide-react'
+import Footer from '../../components/Footer'
 
 
 
@@ -15,7 +16,7 @@ function RouteComponent() {
   return (
     <>
 
-      <div className='h-full'>
+      <div className='h-full flex-col'>
 
 
         <div className="flex gap-10 flex-wrap mt-4 justify-center items-center outline mx-20">
@@ -50,7 +51,7 @@ function RouteComponent() {
         </div>
 
 
-
+        <Footer />
 
       </div>
     </>
