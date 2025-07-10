@@ -2,13 +2,11 @@
 const NotFound = () => {
 
   return (
-    <div className=" flex items-center justify-center">
-      <div className="outline p-6 rounded-lg border border-white  text-center">
-        <p className="text-5xl mb-4 font-bold">Not found!</p>
-        {/* <Button asChild size="lg" variant="secondary"> */}
-        {/*   <Link to="/">Go home</Link> */}
-        {/* </Button> */}
 
+    <div className="flex items-center justify-center mt-13 ">
+
+      <div className="w-[25%] flex-col text-center dark:border dark:border-white rounded-lg shadow-xl p-6">
+        <p className="text-5xl mb-4 font-bold">Not found!</p>
       </div>
     </div>)
 }
