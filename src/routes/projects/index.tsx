@@ -30,7 +30,15 @@ function RouteComponent() {
             <CardContent>
               <div className="text-2xl font-bold">{project.projectName}</div>
               <div className="text-gray-500 text-sm">{project.shortText}</div>
-              <Button className="mt-4 text-lg p-6" variant="secondary"><Link to={`/projects/${project.projectName}`}>view project  <ArrowRight /> </Link></Button>
+              <Button className="mt-4 text-lg p-6" variant="secondary">
+                <Link
+                  to='/projects/$projectName'
+                  params={
+                    { projectName: project.projectName }
+                  }
+                >view project  <ArrowRight />
+                </Link>
+              </Button>
             </CardContent>
           </Card>)
 
