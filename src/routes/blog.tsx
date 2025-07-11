@@ -44,6 +44,11 @@ function RouteComponent() {
 
   return (
     <div className="mx-20 flex-col">
+
+      <div className="flex items-center justify-around text-center mb-13">
+        <div className='text-3xl font-bold'>manuelbamise writes</div>
+      </div>
+
       {loading && (
         <div className="text-center py-20 text-lg font-semibold animate-pulse">
           Loading feed...

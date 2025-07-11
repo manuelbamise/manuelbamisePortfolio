@@ -17,8 +17,9 @@ function RouteComponent() {
     <>
       <div className=" flex flex-col">
         <div className="flex items-center justify-around text-center mb-13">
-          <div className='text-3xl font-bold'>These are the projects i've been tinekering..</div>
-        </div><main className="flex-grow ">
+          <div className='text-3xl font-bold'>Here's what i've been up to</div>
+        </div>
+        <main className="flex-grow ">
           <div className="flex gap-10 flex-wrap justify-center items-center mx-20">
             {Projects && Projects.map((project) => (
               <Card key={project.key} className=' bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:border-white/30 dark:text-white dark:hover:shadow-white'>
