@@ -16,10 +16,12 @@ function RouteComponent() {
   return (
     <>
       <div className=" flex flex-col">
-        <main className="flex-grow ">
-          <div className="flex outline gap-10 flex-wrap justify-center items-center mx-20">
+        <div className="flex items-center justify-around text-center mb-13">
+          <div className='text-3xl font-bold'>These are the projects i've been tinekering..</div>
+        </div><main className="flex-grow ">
+          <div className="flex gap-10 flex-wrap justify-center items-center mx-20">
             {Projects && Projects.map((project) => (
-              <Card key={project.key}>
+              <Card key={project.key} className=' bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:border-white/30 dark:text-white dark:hover:shadow-white'>
                 <CardHeader>
                   <div className="w-[7vw]">
                     <img src={img} />

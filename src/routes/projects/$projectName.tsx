@@ -24,17 +24,21 @@ function RouteComponent() {
 
   return (
     <>
-      <div className=''>
+      <div className='flex flex-col'>
 
-        <Button variant="secondary" size="lg" asChild>
+        <div className=' flex justify-center items-center'>
 
-          <Link to='/projects'> <ArrowBigLeft /> </Link>
+          <Button variant="secondary" size="lg" asChild>
 
-        </Button>
-      </div>
-      <div className="p-6 space-y-4 mt-13">
-        <h1 className="text-3xl font-bold">{project.projectName}</h1>
-        <p className="text-gray-700">{project.longerText}</p>
+            <Link to='/projects'> <ArrowBigLeft />Back to /projects </Link>
+
+          </Button>
+        </div>
+        <div className="p-6 space-y-4 mt-13 mx-20">
+          <h1 className="text-3xl font-bold">{project.projectName}</h1>
+          <p className="text-gray-700">{project.longerText}</p>
+        </div>
+
       </div>
 
     </>
