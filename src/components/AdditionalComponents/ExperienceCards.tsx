@@ -8,7 +8,7 @@ import {
   DialogTrigger,
 } from "../ui/dialog"
 
-const ExperienceCards = () => {
+const ExperienceCards = ({ info }) => {
 
   return (
     <Dialog>
@@ -18,16 +18,15 @@ const ExperienceCards = () => {
 
       <DialogContent >
         <DialogHeader className="mb-auto">
-          <DialogDescription>Jan 22 2024 - present</DialogDescription>
-          <DialogTitle>@Bimpe</DialogTitle>
+          <DialogDescription>{info.duration}</DialogDescription>
+          <div>{info.jobTitle}</div>
+          <DialogTitle>{info.companyName}</DialogTitle>
+          <div>{info.companyLocation}</div>
         </DialogHeader>
 
         <ul className="text-lg ">
-          <li className="mb-4"> Architected and implemented scalable microservices using Node.js </li>
-
-          <li className="mb-4">Mentored junior developers and conducted technical interviews </li>
-
-          <li className="mb-4">Collaborated with product managers to define technical specifications </li> </ul>
+          {info.jobDone}
+        </ul>
 
 
       </DialogContent>

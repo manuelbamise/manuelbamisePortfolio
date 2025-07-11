@@ -17,13 +17,13 @@ const ExperienceSection = () => {
               <CardTitle> {experience.jobDuration} </CardTitle>
               <div>{experience.jobTitle}</div>
               <div className="text-2xl font-bold">@{experience.companyName}</div>
-              <CardDescription>Leading balckend development for cloud-based solution</CardDescription>
+              <CardDescription>{experience.shortDescription}</CardDescription>
             </CardHeader>
 
             <CardContent>
               <CardAction>
 
-                <ExperienceCards />
+                <ExperienceCards info={{ duration: experience.jobDuration, jobTitle: experience.jobTitle, companyLocation: experience.companyLocation, companyName: experience.companyName, jobDone: experience.tasksPerformed }} />
 
               </CardAction>
             </CardContent>
