@@ -8,9 +8,9 @@ const ContectSection = () => {
 
   const links = [
     { key: 1, href: "https://x.com/@manuelbamise", logo: <FaXTwitter className="text-6xl" /> },
-    { key: 2, href: "#", logo: <FaLinkedin /> },
+    { key: 2, href: "https://www.linkedin.com/in/emmanuel-t-5197512b2/", logo: <FaLinkedin /> },
     { key: 3, href: "https://youtube.com/@manuelbamise1", logo: <FaYoutube /> },
-    { key: 4, href: "#", logo: <FaTelegram /> },
+    { key: 4, href: "https://t.me/manuelbamise", logo: <FaTelegram /> },
   ]
 
 

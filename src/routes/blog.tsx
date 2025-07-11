@@ -59,7 +59,7 @@ function RouteComponent() {
         data-supascribe-embed-id="396016599949"
         data-supascribe-feed
         ref={containerRef}
-        className={`${loading ? 'hidden' : ''}`}
+        className={`${loading ? 'hidden' : 'shadow-xl border dark:border-white/10 rounded'}`}
       />
     </div>
   );
