@@ -1,6 +1,6 @@
 
 import { useEffect, useMemo, useState } from 'react';
-import ThemeSwitcher from './ThemeSwitcher';
+import ThemeSwitcher from '../../lib/theme-config/ThemeSwitcher';
 import { Link, useRouter } from '@tanstack/react-router';
 
 

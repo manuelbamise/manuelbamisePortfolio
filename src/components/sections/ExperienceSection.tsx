@@ -1,5 +1,5 @@
-import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
-import ExperienceCards from "./ExperienceCards";
+import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
+import ExperienceCards from "../AdditionalComponents/ExperienceCards";
 
 
 const ExperienceSection = () => {

@@ -1,15 +1,13 @@
 import { StrictMode } from 'react'
-// import ReactDOM from 'react-dom/client'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
-import { ThemeProvider } from './components/theme-provider.tsx'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-// import App from './App.tsx'
+import { ThemeProvider } from './lib/theme-config/theme-provider.tsx'
 
 
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'
-import NotFound from './components/NotFound.tsx'
+import NotFound from './components/AdditionalComponents/NotFound.tsx'
 
 // Create a new router instance
 const router = createRouter({ routeTree, defaultNotFoundComponent: NotFound })

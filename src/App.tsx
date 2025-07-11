@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Card } from "./components/ui/card";
-import MarqueeSection from "./components/MarqueeSection";
-import ExperienceSection from "./components/ExperienceSection";
 import img1 from "./assets/img/img001.jpeg"
-import ContectSection from "./components/ContectSection";
+import ContactSection from "./components/sections/ContactSection";
+import MarqueeSection from "./components/sections/MarqueeSection";
+import ExperienceSection from "./components/sections/ExperienceSection";
 
 
 function App() {
@@ -66,7 +66,7 @@ function App() {
           </div>
 
           <div className="mt-13 mx-20">
-            <ContectSection />
+            <ContactSection />
           </div>
 
 

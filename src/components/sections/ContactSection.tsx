@@ -1,4 +1,4 @@
-import { Button } from "./ui/button"
+import { Button } from "../ui/button"
 import { Github, Mail, PlaneTakeoff, Twitter, Youtube } from "lucide-react"
 
 

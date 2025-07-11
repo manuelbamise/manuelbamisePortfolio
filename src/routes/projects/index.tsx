@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader } from '../../components/ui/card'
 import { Button } from '../../components/ui/button'
 import img from '../../assets/img/img001.jpeg'
 import { ArrowRight } from 'lucide-react'
-import Footer from '../../components/Footer'
+import Footer from '../../components/sections/FooterSection'
 
 
 
