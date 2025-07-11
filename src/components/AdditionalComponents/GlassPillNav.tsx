@@ -36,7 +36,7 @@ export const GlassPillNav: React.FC = () => {
 
   useEffect(() => {
     navItems.forEach((item) => {
-      if (location === item.route) {
+      if (item.route && (location === item.route || location.includes(item.route))) {
         setActiveTab(item.label as Tab)
       }
     })
