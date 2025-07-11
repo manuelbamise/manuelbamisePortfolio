@@ -72,10 +72,6 @@ function App() {
 
         </main >
 
-        <div className="flex items-center justify-center mt-13">
-          <div>Footer</div>
-          <div>built my manuelbamise...links </div>
-        </div>
       </div >
     </>
   )

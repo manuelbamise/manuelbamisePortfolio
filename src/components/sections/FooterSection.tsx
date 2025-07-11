@@ -3,8 +3,10 @@
 const Footer = () => {
   return (
 
-    <div className="outline">Footer for the sinjndjsd</div>
-
+    <div className="flex items-center justify-center mt-13">
+      <div>Footer</div>
+      <div>built my manuelbamise...links </div>
+    </div>
   )
 }
 
