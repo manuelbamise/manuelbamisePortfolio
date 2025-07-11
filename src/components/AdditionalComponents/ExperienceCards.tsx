@@ -8,7 +8,19 @@ import {
   DialogTrigger,
 } from "../ui/dialog"
 
-const ExperienceCards = ({ info }) => {
+
+type infoTypes = {
+  info: {
+    duration: string,
+    jobTitle: string,
+    companyName: string,
+    companyLocation: string,
+    jobDone: string
+  }
+}
+
+
+const ExperienceCards = ({ info }: infoTypes) => {
 
   return (
     <Dialog>
