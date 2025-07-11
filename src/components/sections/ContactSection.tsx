@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaTelegram, FaYoutube } from "react-icons/fa"
+import { FaLinkedin, FaTelegram, FaYoutube } from "react-icons/fa"
 import { Button } from "../ui/button"
 import { FaXTwitter } from "react-icons/fa6"
 
@@ -11,7 +11,6 @@ const ContectSection = () => {
     { key: 2, href: "#", logo: <FaLinkedin /> },
     { key: 3, href: "https://youtube.com/@manuelbamise1", logo: <FaYoutube /> },
     { key: 4, href: "#", logo: <FaTelegram /> },
-    { key: 5, href: "https://github.com/manuelbamise", logo: <FaGithub /> },
   ]
 
 
@@ -23,13 +22,13 @@ const ContectSection = () => {
       <div className="flex-col items-center justify-center ">
         <div className="flex-col items-center justify-around text-center ">
           <div className="text-3xl">contact </div>
-          <div>here's how you can reach out to me</div>
+          <div>fastest way to reach me is by twitter dm or telegram</div>
         </div>
-        <div className="flex items-center justify-center gap-10 flex-wrap mt-4 outline">
+        <div className="flex items-center justify-center gap-10 flex-wrap mt-4">
 
           {links && links.map((link) => (
 
-            <Button asChild key={link.key} className="w-[10vw] p-6">
+            <Button asChild key={link.key} className="w-[10vw] p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30">
               <a target="_blank" href={link.href} >{link.logo}</a>
             </Button>
 

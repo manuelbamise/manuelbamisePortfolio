@@ -1,6 +1,6 @@
 import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import ExperienceCards from "../AdditionalComponents/ExperienceCards";
-
+import experiences from "../../lib/json/experiences.json"
 
 const ExperienceSection = () => {
   return (<>
@@ -11,53 +11,25 @@ const ExperienceSection = () => {
       </div>
       <div className="flex items-center justify-center gap-10 flex-wrap mt-4">
 
-        <Card className=" w-[15vw]">
-          <CardHeader>
-            <CardTitle>  jan 2022 - present</CardTitle>
-            <div className="text-2xl font-bold">@Bimpe</div>
-            <CardDescription>Leading backend development for cloud-based solution</CardDescription>
-          </CardHeader>
+        {experiences && experiences.map((experience) => (
+          <Card key={experience.key} className=" w-[15vw] bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:border-white/30 dark:text-white dark:hover:shadow-white">
+            <CardHeader>
+              <CardTitle> {experience.jobDuration} </CardTitle>
+              <div>{experience.jobTitle}</div>
+              <div className="text-2xl font-bold">@{experience.companyName}</div>
+              <CardDescription>Leading balckend development for cloud-based solution</CardDescription>
+            </CardHeader>
 
-          <CardContent>
-            <CardAction>
+            <CardContent>
+              <CardAction>
 
-              <ExperienceCards />
+                <ExperienceCards />
 
-            </CardAction>
-          </CardContent>
-        </Card>
+              </CardAction>
+            </CardContent>
+          </Card>
 
-        <Card className=" w-[15vw]">
-          <CardHeader>
-            <CardTitle>  jan 2022 - present</CardTitle>
-            <div className="text-2xl font-bold">@Bimpe</div>
-            <CardDescription>Leading backend development for cloud-based solution</CardDescription>
-          </CardHeader>
-
-          <CardContent>
-            <CardAction>
-
-              <ExperienceCards />
-
-            </CardAction>
-          </CardContent>
-        </Card>
-
-        <Card className=" w-[15vw]">
-          <CardHeader>
-            <CardTitle>  jan 2022 - present</CardTitle>
-            <div className="text-2xl font-bold">@Bimpe</div>
-            <CardDescription>Leading backend development for cloud-based solution</CardDescription>
-          </CardHeader>
-
-          <CardContent>
-            <CardAction>
-
-              <ExperienceCards />
-
-            </CardAction>
-          </CardContent>
-        </Card>
+        ))}
 
       </div>
     </div>
