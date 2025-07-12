@@ -41,12 +41,6 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-@layer components {
-  .customCards{
-    @apply p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30;
-}
-}
-
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
