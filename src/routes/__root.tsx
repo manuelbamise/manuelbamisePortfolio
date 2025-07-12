@@ -12,11 +12,9 @@ export const Route = createRootRoute({
           <GlassPillNav />
           <Outlet />
           <TanStackRouterDevtools />
-
-
         </div>
-        <div className='text-center'>
 
+        <div className='text-center'>
           <Footer />
         </div>
 
