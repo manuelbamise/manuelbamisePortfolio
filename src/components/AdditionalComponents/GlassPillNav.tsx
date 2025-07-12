@@ -9,9 +9,9 @@ import { Link, useRouter } from '@tanstack/react-router';
 
 export const GlassPillNav: React.FC = () => {
 
-  type Tab = 'Home' | 'Projects' | 'Video content' | 'Blog' | 'ThemeSwitcher';
+  type navItemTypes = 'Home' | 'Projects' | 'Video content' | 'Blog' | 'ThemeSwitcher';
 
-  const [activeTab, setActiveTab] = useState<Tab>('Home');
+  const [activeTab, setActiveTab] = useState<navItemTypes>('Home');
 
 
   const router = useRouter()
@@ -37,7 +37,7 @@ export const GlassPillNav: React.FC = () => {
   useEffect(() => {
     navItems.forEach((item) => {
       if (item.route && (location === item.route || location.includes(item.route))) {
-        setActiveTab(item.label as Tab)
+        setActiveTab(item.label as navItemTypes)
       }
     })
 
@@ -53,7 +53,7 @@ export const GlassPillNav: React.FC = () => {
           >
             <div
               onClick=
-              {() => (setActiveTab(item.label as Tab))}
+              {() => (setActiveTab(item.label as navItemTypes))}
               className={` py-3 rounded-lg transition-all duration-300 text-sm font-semibold               ${activeTab === item.label
                 ? 'bg-gray-700/50 bg-none text-white dark:text-black dark:bg-white shadow-inner backdrop-blur-md'
                 : 'text-black dark:text-white dark:hover:bg-white/10 hover:bg-gray-700/10'}`}
@@ -61,6 +61,7 @@ export const GlassPillNav: React.FC = () => {
               <Link to={item.route} className='w-full h-full px-6 py-3.5 '>{item.label}</Link>
             </div></div>
         ) : <div key={item.label}>{item.component}</div>)}
+
       </div>
     </div >
   );

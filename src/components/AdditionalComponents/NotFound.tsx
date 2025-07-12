@@ -3,12 +3,17 @@ const NotFound = () => {
 
   return (
 
-    <div className="flex items-center justify-center mt-13 ">
+    <>
+      <div className="flex items-center justify-center mt-13 ">
+        <div className="w-[25%] flex-col text-center dark:border dark:border-white rounded-lg shadow-xl p-6">
 
-      <div className="w-[25%] flex-col text-center dark:border dark:border-white rounded-lg shadow-xl p-6">
-        <p className="text-5xl mb-4 font-bold">Not found!</p>
+          <div className="text-5xl font-bold">Coming Soon</div>
+          <div className="text-gray-700 dark:text-white mt-6">This page is still under construction.</div>
+
+        </div>
       </div>
-    </div>)
+    </>
+  )
 }
 
 export default NotFound;
