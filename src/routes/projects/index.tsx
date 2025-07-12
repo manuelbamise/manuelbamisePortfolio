@@ -22,7 +22,7 @@ function RouteComponent() {
         <main className="flex-grow ">
           <div className="flex gap-10 flex-wrap justify-center items-center mx-20">
             {Projects && Projects.map((project) => (
-              <Card key={project.key} className=' bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:border-white/30 dark:text-white dark:hover:shadow-white'>
+              <Card key={project.key} className='customCards'>
                 <CardHeader>
                   <div className="w-[7vw]">
                     <img src={img} />
