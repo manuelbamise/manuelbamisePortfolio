@@ -5,6 +5,7 @@ import ContactSection from "./components/sections/ContactSection";
 import MarqueeSection from "./components/sections/MarqueeSection";
 import ExperienceSection from "./components/sections/ExperienceSection";
 import { Button } from "./components/ui/button";
+import { FileSpreadsheet } from "lucide-react";
 
 
 function App() {
@@ -57,7 +58,7 @@ function App() {
 
 
           <div className="mt-13 mx-20 flex items-center justify-center">
-            <Button variant='secondary' size='lg'>Download resume</Button>
+            <Button variant='secondary' size='lg' className="w-[10vw] p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30">Download resume <FileSpreadsheet />  </Button>
           </div>
 
           <div className="mt-13 mx-20">
