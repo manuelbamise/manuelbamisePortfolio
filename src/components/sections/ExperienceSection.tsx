@@ -13,7 +13,7 @@ const ExperienceSection = () => {
 
         {experiences && experiences.map((experience) => (
           <Card key={experience.key} className=" w-[15%] min-h-[25vh] bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:border-white/30 dark:text-white dark:hover:shadow-white">
-            <CardHeader className=" outline outline-black h-[15vh]">
+            <CardHeader className="flex flex-col h-[15vh]">
               <CardTitle> {experience.jobDuration} </CardTitle>
               <div>{experience.jobTitle}</div>
               <div className="text-2xl font-bold">@{experience.companyName}</div>
