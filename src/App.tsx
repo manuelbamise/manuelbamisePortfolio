@@ -34,6 +34,8 @@ function App() {
   }, [images.length])
 
   const { url, rotate } = images[index];
+  const currentYear = new Date().getFullYear()
+  const age = currentYear - 2006
 
   return (
     <>
@@ -43,9 +45,8 @@ function App() {
 
           <div className="mx-20 mt-8 flex items-center">
             <div className="mt-4 w-[50%]">
-              <div className="text-5xl mb-2">hi!! I;m hdsjebte</div>
-              <div>Creating innovative solutions and captivating designs.
-                University student by day, visionary creator by nighI'm a Software Engineer with 3+ years of experience building scalable, secure, and high-performance server-side applications using Node.js, Express.js, and Nest.js. I specialize in creating efficient APIs and microservices, and have contributed to various open-source projects. I'm passionate about making a positive impact and continuously expanding my skills in software engineering.</div>
+              <div className="text-5xl mb-2">hi!! I'm Bamise</div>
+              <div className="text-3xl text-gray-600"> A {age} year old software engineer.</div>
             </div>
             <div className=" w-[400px]">
               <Card className={`p-4 rounded-none w-full shadow-xl  ${rotate} transition-all duration-300 ease-in-out ${isAnimating ? "scale-90 opacity-0" : "scale-100 opacity-100"
