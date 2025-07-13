@@ -10,7 +10,7 @@ const ExperienceSection = () => {
         <div>here are the places i've worked at</div>
       </div>
 
-      <div className="flex items-center justify-center gap-10 flex-wrap  mt-4">
+      <div className="flex items-center justify-center gap-10 flex-wrap outline mt-4">
 
         {experiences && experiences.map((experience) => (
           <Card key={experience.key} className=" w-[25%] min-h-[25vh] bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:border-white/30 dark:text-white dark:hover:shadow-white">
