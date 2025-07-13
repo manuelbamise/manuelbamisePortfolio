@@ -4,6 +4,7 @@ import img1 from "./assets/img/img001.jpeg"
 import ContactSection from "./components/sections/ContactSection";
 import MarqueeSection from "./components/sections/MarqueeSection";
 import ExperienceSection from "./components/sections/ExperienceSection";
+import { Button } from "./components/ui/button";
 
 
 function App() {
@@ -51,6 +52,12 @@ function App() {
                 <img src={url} alt="placeholderImage" />
               </Card>
             </div>
+
+          </div>
+
+
+          <div className="mt-13 mx-20 flex items-center justify-center">
+            <Button variant='secondary' size='lg'>Download resume</Button>
           </div>
 
           <div className="mt-13 mx-20">
