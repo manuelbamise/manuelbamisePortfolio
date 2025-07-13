@@ -1,6 +1,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { createFileRoute } from '@tanstack/react-router';
+import { Button } from '../components/ui/button';
 
 export const Route = createFileRoute('/blog')({
   component: RouteComponent,
@@ -61,6 +62,13 @@ function RouteComponent() {
         ref={containerRef}
         className={`${loading ? 'hidden' : 'shadow-xl border dark:border-white/10 rounded'}`}
       />
+
+
+      <div className="flex items-center justify-around text-center mb-13">
+        <Button className='p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30'>
+          <a href='#'>          Check out full blog site       </a>
+        </Button>
+      </div>
     </div>
   );
 }

@@ -48,7 +48,7 @@ function RouteComponent() {
             <div className='mt-5'>
               <div className='font-bold'>Technologies</div>
               <div className=' w-[50vw] mt-2'>{project.techStack && project.techStack.map((stack) => (
-                <Badge className='mr-4 p-2 text-white bg-black dark:text-black dark:bg-white rounded-xl' variant="secondary" >{stack}</Badge>
+                <Badge key={stack} className='mr-4 p-2 text-white bg-black dark:text-black dark:bg-white rounded-xl' variant="secondary" >{stack}</Badge>
               ))}</div>
             </div>
           </div>

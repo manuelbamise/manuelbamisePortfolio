@@ -46,7 +46,7 @@ function App() {
           <div className="mx-20 mt-8 flex items-center">
             <div className="mt-4 w-[50%]">
               <div className="text-5xl mb-2">hi!! I'm Bamise</div>
-              <div className="text-3xl text-gray-600"> A {age} year old software engineer.</div>
+              <div className="text-3xl text-gray-600 dark:text-gray-300"> A {age} year old software engineer.</div>
             </div>
             <div className=" w-[400px]">
               <Card className={`p-4 rounded-none w-full shadow-xl  ${rotate} transition-all duration-300 ease-in-out ${isAnimating ? "scale-90 opacity-0" : "scale-100 opacity-100"
@@ -59,7 +59,7 @@ function App() {
 
 
           <div className="mt-13 mx-20 flex items-center justify-center">
-            <Button variant='secondary' size='lg' className="w-[10vw] p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30">Download resume <FileSpreadsheet />  </Button>
+            <Button variant='secondary' size='lg' className=" p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30">Download resume <FileSpreadsheet />  </Button>
           </div>
 
           <div className="mt-13 mx-20">
