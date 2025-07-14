@@ -6,7 +6,7 @@ import MarqueeSection from "./components/sections/MarqueeSection";
 import ExperienceSection from "./components/sections/ExperienceSection";
 import { Button } from "./components/ui/button";
 import { Briefcase, FileSpreadsheet } from "lucide-react";
-
+import { motion } from 'framer-motion'
 
 function App() {
 
@@ -38,36 +38,57 @@ function App() {
   const age = currentYear - 2006
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+
+    >
       <div className=" flex-col  dark:bg-stone-950 mb-4">
 
         <main className="flex-1">
 
           <div className="px-6 md:px-20 mt-8 flex flex-col-reverse md:flex-row items-center gap-8">
             {/* Text Section */}
-            <div className="w-full md:w-1/2 mt-4 text-center md:text-left">
+            <motion.div className="w-full md:w-1/2 mt-4 text-center md:text-left"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.5, ease: 'easeOut' }}
+            >
               <div className="text-4xl md:text-5xl font-bold mb-2">bamise.</div>
               <div className="text-xl md:text-3xl text-gray-600 dark:text-gray-300">
                 a {age} year old software engineer who likes to build things.
               </div>
-            </div>
+            </motion.div>
 
             {/* Image Card Section */}
-            <div className="w-full sm:w-[300px] md:w-[400px]">
+            <motion.div className="w-full sm:w-[300px] md:w-[400px]"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.5, ease: 'easeOut' }}
+            >
               <Card
                 className={`p-4 rounded-none w-full shadow-xl transition-all duration-300 ease-in-out
         ${rotate} ${isAnimating ? "scale-90 opacity-0" : "scale-100 opacity-100"}`}
               >
                 <img src={url} alt="placeholderImage" className="w-full h-auto object-cover" />
               </Card>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="mt-13 mx-20 flex items-center justify-center">
+          <motion.div className="mt-13 mx-20 flex items-center justify-center"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+          >
             <Button variant='secondary' size='lg' className=" p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30">Download resume <FileSpreadsheet />  </Button>
-          </div>
+          </motion.div>
 
-          <div className="px-6 md:px-20 mt-10 space-y-3 text-base md:text-lg leading-relaxed">
+          <motion.div className="px-6 md:px-20 mt-10 space-y-3 text-base md:text-lg leading-relaxed"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+          >
             <p>
               <span className="font-semibold">Hey!</span> I'm <span className="font-bold">Emmanuel Oluwabamise Tobi</span>, an undergraduate Computer Science student and full-stack engineer who loves turning ideas into real, working products.
             </p>
@@ -91,7 +112,7 @@ function App() {
             <Button variant='secondary' size='lg' className=" p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30" asChild>
               <a target="_blank" href="mailto:emmabamise1930@gmail.com?subject=Interested%20in%20Hiring%20You"> <Briefcase /> Hire Me</a>
             </Button>
-          </div>
+          </motion.div>
 
           <div className="mt-13 mx-20">
             <MarqueeSection />
@@ -109,7 +130,7 @@ function App() {
         </main >
 
       </div >
-    </>
+    </motion.div>
   )
 }
 

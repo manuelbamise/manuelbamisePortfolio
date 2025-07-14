@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link, useRouter } from '@tanstack/react-router';
 import { Menu, X } from 'lucide-react';
 import ThemeSwitcher from '../../lib/theme-config/ThemeSwitcher';
+import { motion } from 'framer-motion'
 
 export const GlassPillNav: React.FC = () => {
   type navItemTypes = 'Home' | 'Projects' | 'Video content' | 'Blog' | 'ThemeSwitcher';
@@ -36,7 +37,11 @@ export const GlassPillNav: React.FC = () => {
   }, [location, navItems]);
 
   return (
-    <div className=" md:px-6 mt-4 bg-white/30 md:bg-transparent dark:bg-transparent  flex items-center md:justify-center justify-end  py-6 sticky top-0 z-4">
+    <motion.div className=" md:px-6 mt-4 bg-white/30 md:bg-transparent dark:bg-transparent  flex items-center md:justify-center justify-end  py-6 sticky top-0 z-4"
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.5, ease: 'easeOut' }}
+    >
       {/* Mobile hamburger */}
       <div className="md:hidden  outline-white mt-4 mr-4">
         <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
@@ -76,7 +81,7 @@ export const GlassPillNav: React.FC = () => {
           )
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
