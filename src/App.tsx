@@ -63,21 +63,6 @@ function App() {
             </div>
           </div>
 
-          {/* <div className="mx-20 mt-8 flex items-center"> */}
-          {/*   <div className="mt-4 w-[50%]"> */}
-          {/*     <div className="text-5xl mb-2">bamise.</div> */}
-          {/*     <div className="text-3xl text-gray-600 dark:text-gray-300"> a {age} year old software engineer who likes to build things.</div> */}
-          {/*   </div> */}
-          {/*   <div className=" w-[400px]"> */}
-          {/*     <Card className={`p-4 rounded-none w-full shadow-xl  ${rotate} transition-all duration-300 ease-in-out ${isAnimating ? "scale-90 opacity-0" : "scale-100 opacity-100" */}
-          {/*       }`}> */}
-          {/*       <img src={url} alt="placeholderImage" /> */}
-          {/*     </Card> */}
-          {/*   </div> */}
-          {/**/}
-          {/* </div> */}
-          {/**/}
-
           <div className="mt-13 mx-20 flex items-center justify-center">
             <Button variant='secondary' size='lg' className=" p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30">Download resume <FileSpreadsheet />  </Button>
           </div>
