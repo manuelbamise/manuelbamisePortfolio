@@ -14,34 +14,33 @@ import vueSvg from "../../assets/svg/vue.svg"
 import prismaSvg from "../../assets/svg/prisma.svg"
 
 
+const techStack = [
+  typescriptSvg, reactSvg, vueSvg, tailwindSvg,
+  nodeSvg, expressSvg, nestjsSvg,
+  postgresSvg, prismaSvg,
+  gitSvg, githubSvg,
+  neovimSvg, ubuntuSvg,
+];
+
+
+
 const MarqueeSection = () => {
 
   return (
     <>
-      <Marquee pauseOnHover={true}>
-        <div className="flex w-[100vw] items-center justify-around">
-
-          <img src={typescriptSvg} alt="typescript svg" />
-
-          <img src={reactSvg} alt="React svg" />
-          <img src={vueSvg} alt="vuejs svg" />
-          <img src={tailwindSvg} alt="tailwind svg" />
-
-          <img src={nodeSvg} alt="node svg" />
-          <img src={expressSvg} alt="express svg" />
-          <img src={nestjsSvg} alt="nestjs svg" />
-
-          <img src={postgresSvg} alt="postgres svg" />
-          <img src={prismaSvg} alt="prisma svg" />
-
-          <img src={gitSvg} alt="git svg" />
-          <img src={githubSvg} alt="github svg" />
-
-          <img src={neovimSvg} alt="neovim svg" />
-          <img src={ubuntuSvg} alt="ubuntu svg" />
-
-        </div>
-      </Marquee>
+      <div className="w-full py-6">
+        <Marquee pauseOnHover={true} gradient={true} gradientWidth={50} >
+          <div className="flex items-center gap-8 justify-around px-4 outline lg:w-[100vw] w-full">
+            {techStack.map((icon, index) => (
+              <img
+                key={index}
+                src={icon}
+                alt="tech icon"
+              />
+            ))}
+          </div>
+        </Marquee>
+      </div>
     </>
   )
 }
