@@ -16,4 +16,4 @@ const ComingSoonComponent = () => {
 }
 
 
-export default ComingSoonComponent
+export default ComingSoonComponent;

@@ -1,9 +1,10 @@
 
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { createFileRoute, Link, notFound } from '@tanstack/react-router'
 import projects from '../../lib/json/projects.json'
 import { Button } from '../../components/ui/button';
 import { ArrowBigLeft } from 'lucide-react';
 import { Badge } from '../../components/ui/badge';
+import NotFound from '../../components/AdditionalComponents/NotFound';
 
 export const Route = createFileRoute('/projects/$projectName')({
   loader: ({ params }) => {
@@ -12,16 +13,20 @@ export const Route = createFileRoute('/projects/$projectName')({
     );
 
     if (!project) {
-      throw new Error('Project not found');
+      throw notFound();
     }
 
-    return project;
+    return project ?? null;
   },
   component: RouteComponent,
 });
 
 function RouteComponent() {
   const project = Route.useLoaderData();
+
+  if (!project) {
+    return <NotFound />
+  }
 
   return (
     <>
