@@ -21,7 +21,7 @@ const ContectSection = () => {
 
       <div className="flex-col items-center justify-center ">
         <div className="flex-col items-center justify-around text-center ">
-          <div className="text-3xl">contact </div>
+          <div className="text-3xl">reach out to me</div>
           <div>fastest way to reach me is by twitter dm or telegram</div>
         </div>
         <div className="flex items-center justify-center gap-10 flex-wrap mt-4">

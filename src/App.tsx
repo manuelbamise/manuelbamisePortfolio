@@ -5,7 +5,7 @@ import ContactSection from "./components/sections/ContactSection";
 import MarqueeSection from "./components/sections/MarqueeSection";
 import ExperienceSection from "./components/sections/ExperienceSection";
 import { Button } from "./components/ui/button";
-import { FileSpreadsheet } from "lucide-react";
+import { Briefcase, FileSpreadsheet } from "lucide-react";
 
 
 function App() {
@@ -43,27 +43,69 @@ function App() {
 
         <main className="flex-1">
 
-          <div className="mx-20 mt-8 flex items-center">
-            <div className="mt-4 w-[50%]">
-              <div className="text-5xl mb-2">hi!! I'm Bamise</div>
-              <div className="text-3xl text-gray-600 dark:text-gray-300"> A {age} year old software engineer.</div>
+          <div className="px-6 md:px-20 mt-8 flex flex-col-reverse md:flex-row items-center gap-8">
+            {/* Text Section */}
+            <div className="w-full md:w-1/2 mt-4 text-center md:text-left">
+              <div className="text-4xl md:text-5xl font-bold mb-2">bamise.</div>
+              <div className="text-xl md:text-3xl text-gray-600 dark:text-gray-300">
+                a {age} year old software engineer who likes to build things.
+              </div>
             </div>
-            <div className=" w-[400px]">
-              <Card className={`p-4 rounded-none w-full shadow-xl  ${rotate} transition-all duration-300 ease-in-out ${isAnimating ? "scale-90 opacity-0" : "scale-100 opacity-100"
-                }`}>
-                <img src={url} alt="placeholderImage" />
+
+            {/* Image Card Section */}
+            <div className="w-full sm:w-[300px] md:w-[400px]">
+              <Card
+                className={`p-4 rounded-none w-full shadow-xl transition-all duration-300 ease-in-out
+        ${rotate} ${isAnimating ? "scale-90 opacity-0" : "scale-100 opacity-100"}`}
+              >
+                <img src={url} alt="placeholderImage" className="w-full h-auto object-cover" />
               </Card>
             </div>
-
           </div>
 
+          {/* <div className="mx-20 mt-8 flex items-center"> */}
+          {/*   <div className="mt-4 w-[50%]"> */}
+          {/*     <div className="text-5xl mb-2">bamise.</div> */}
+          {/*     <div className="text-3xl text-gray-600 dark:text-gray-300"> a {age} year old software engineer who likes to build things.</div> */}
+          {/*   </div> */}
+          {/*   <div className=" w-[400px]"> */}
+          {/*     <Card className={`p-4 rounded-none w-full shadow-xl  ${rotate} transition-all duration-300 ease-in-out ${isAnimating ? "scale-90 opacity-0" : "scale-100 opacity-100" */}
+          {/*       }`}> */}
+          {/*       <img src={url} alt="placeholderImage" /> */}
+          {/*     </Card> */}
+          {/*   </div> */}
+          {/**/}
+          {/* </div> */}
+          {/**/}
 
           <div className="mt-13 mx-20 flex items-center justify-center">
             <Button variant='secondary' size='lg' className=" p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30">Download resume <FileSpreadsheet />  </Button>
           </div>
 
-          <div className="mt-13 mx-20">
-            pMy coding journey kicked off when I was 9 years old. I began with block-based coding on websites like Code.org and Scratch. Eventually, I gained interest in web development and used online resources such as YouTube and Udemy to learn HTML, CSS, and JavaScript. A few years later, when I was 11, I got my first MacBook and wanted to learn iOS development, so I self-learned Swift and SwiftUI. Fast forward to when I was about to turn 13, I found out about the Swift Student Challenge and I started developing an offline app for it. When I submitted it, I thought I had a very slim chance of being one of the 350 winners, but I made it! I even got an offer from Apple to attend WWDC24 in-person. It was a very unique experience in Cupertino, meeting many new people. Right now, I am continuing to build more projects and learn new skills such as Next.js and Python.
+          <div className="px-6 md:px-20 mt-10 space-y-3 text-base md:text-lg leading-relaxed">
+            <p>
+              <span className="font-semibold">Hey!</span> I'm <span className="font-bold">Emmanuel Oluwabamise Tobi</span>, an undergraduate Computer Science student and full-stack engineer who loves turning ideas into real, working products.
+            </p>
+            <p>
+              I'm a <span className="italic">self-taught developer</span> with over <span className="font-semibold">6 years of experience</span> based in Nigeria.
+            </p>
+            <p>
+              I began learning to code in <span className="font-semibold">2019</span>, even before I entered university to study Computer Science. While the classroom taught me theory, I taught myself the real-world skills that power modern software.
+            </p>
+            <p>
+              I'm flexible with any tech stack, though I lean toward modern tools. Currently, I work with <span className="font-medium text-blue-600 dark:text-blue-400">React</span>, <span className="font-medium text-green-600 dark:text-green-400">Vue</span>, <span className="font-medium text-pink-600 dark:text-pink-400">NestJS</span>, <span className="font-medium text-purple-600 dark:text-purple-400">Prisma</span>, and <span className="font-medium text-yellow-600 dark:text-yellow-400">TypeScript</span>.
+            </p>
+
+            <p>
+              <span className="font-semibold">My mission</span> is to build tools that matter, share my process openly, inspire others and eventually get recognized as a thought leader in the industry
+            </p>
+
+            <div>
+              <p>I’m currently available for internships, full-time opportunities, and freelance projects.</p>
+              <p> If you’re looking for someone passionate, skilled, and ready to contribute, I’m here to help bring your ideas to life!</p></div>
+            <Button variant='secondary' size='lg' className=" p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30" asChild>
+              <a target="_blank" href="mailto:emmabamise1930@gmail.com?subject=Interested%20in%20Hiring%20You"> <Briefcase /> Hire Me</a>
+            </Button>
           </div>
 
           <div className="mt-13 mx-20">
