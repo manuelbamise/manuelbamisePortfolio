@@ -64,7 +64,7 @@ function RouteComponent() {
       />
 
 
-      <div className="flex items-center justify-around text-center mb-13">
+      <div className="flex items-center justify-around text-center mb-13 mt-6">
         <Button className='p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30'>
           <a href='#'>          Check out full blog site       </a>
         </Button>
