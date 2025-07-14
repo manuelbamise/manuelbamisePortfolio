@@ -30,7 +30,7 @@ const MarqueeSection = () => {
     <>
       <div className="w-full py-6">
         <Marquee pauseOnHover={true} gradient={true} gradientWidth={50} >
-          <div className="flex items-center gap-8 justify-around px-4 outline lg:w-[100vw] w-full">
+          <div className="flex items-center gap-8 justify-around px-4 lg:w-[100vw] w-full">
             {techStack.map((icon, index) => (
               <img
                 key={index}
