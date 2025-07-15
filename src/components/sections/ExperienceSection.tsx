@@ -1,13 +1,30 @@
 import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import ExperienceCards from "../AdditionalComponents/ExperienceCards";
 import experiences from "../../lib/json/experiences.json"
+import { motion } from "framer-motion";
 
 const ExperienceSection = () => {
+
   return (<>
-    <div className="flex-col items-center justify-center ">
-      <div className="flex-col items-center justify-around text-center ">
-        <div className="text-3xl">experience </div>
-        <div>here are the places i've worked at</div>
+    <motion.div
+
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+    >
+      <div className="text-center space-y-2">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.2 }}
+          className="text-2xl md:text-3xl font-semibold"
+        >
+          Work Experience
+        </motion.div>
+        <div className="text-sm md:text-base text-gray-600 dark:text-gray-300">
+          Here are the places i've worked at.
+        </div>
       </div>
 
       <div className="flex items-center justify-center gap-10 flex-wrap  mt-4">
@@ -39,8 +56,7 @@ const ExperienceSection = () => {
         ))}
 
       </div>
-    </div>
-
+    </motion.div >
 
   </>)
 }

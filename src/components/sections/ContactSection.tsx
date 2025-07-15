@@ -70,8 +70,7 @@ const ContectSection = () => {
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-          >
+            transition={{ duration: 0.4 }} >
             <Button
               asChild
               className="w-16 h-16 sm:w-20 sm:h-20 p-4 sm:p-5 rounded-lg flex items-center justify-center bg-white text-black border border-black/10 hover:shadow-xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white  dark:border-white/30"
