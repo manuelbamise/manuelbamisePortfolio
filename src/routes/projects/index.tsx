@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader } from '../../components/ui/card'
 import { Button } from '../../components/ui/button'
 import img from '../../assets/img/img001.jpeg'
 import { ArrowRight } from 'lucide-react'
-
+import { motion } from 'framer-motion'
 
 
 
@@ -15,7 +15,13 @@ export const Route = createFileRoute('/projects/')({
 function RouteComponent() {
   return (
     <>
-      <div className=" flex flex-col">
+      <motion.div className=" flex flex-col"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+
+
+      >
         <div className="flex items-center justify-around text-center mb-13">
           <div className='text-3xl font-bold'>Here's what i've been up to</div>
         </div>
@@ -45,6 +51,6 @@ function RouteComponent() {
           </div>
         </main>
 
-      </div>   </>
+      </motion.div>   </>
   )
 }
