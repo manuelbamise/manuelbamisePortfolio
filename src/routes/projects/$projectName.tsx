@@ -4,7 +4,7 @@ import projects from '../../lib/json/projects.json';
 import { Button } from '../../components/ui/button';
 import { ArrowBigLeft } from 'lucide-react';
 import { Badge } from '../../components/ui/badge';
-import NotFound from '../../components/AdditionalComponents/NotFound';
+import { motion } from 'framer-motion';
 
 export const Route = createFileRoute('/projects/$projectName')({
   loader: ({ params }) => {
@@ -24,24 +24,40 @@ export const Route = createFileRoute('/projects/$projectName')({
 function RouteComponent() {
   const project = Route.useLoaderData();
 
-  if (!project) {
-    return <NotFound />;
-  }
-
   return (
-    <div className="flex flex-col px-4 md:px-20 py-8 gap-8">
+    <motion.div className="flex flex-col px-4 md:px-20 py-8 gap-8"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+
+    >
       {/* Back Button */}
       <div className="flex justify-start">
-        <Button variant="secondary" size="lg" asChild>
-          <Link to="/projects">
-            <ArrowBigLeft className="mr-2" />
-            Back to /projects
-          </Link>
-        </Button>
+        <motion.div
+          initial={{ scaleX: 0, originX: 1 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Button variant="secondary" size="lg" asChild>
+            <Link to="/projects" from='/projects/$projectName'
+              params={{ projectName: project }}
+            //#TODO: check the llm for how to fix the cannot find match for from /path/ error;
+            >
+              <ArrowBigLeft className="mr-2" />
+              Back to /projects
+            </Link>
+          </Button>
+        </motion.div>
       </div>
 
       {/* Project Info */}
-      <div className="space-y-4">
+      <motion.div className="space-y-4"
+
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+
+      >
         <h1 className="text-2xl md:text-3xl font-bold">{project.projectName}</h1>
         <p className="text-gray-700 dark:text-gray-300">{project.shortText}</p>
 
@@ -69,8 +85,8 @@ function RouteComponent() {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
