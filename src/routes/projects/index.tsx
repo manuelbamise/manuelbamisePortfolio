@@ -28,7 +28,7 @@ function RouteComponent() {
         <main className="flex-grow ">
           <div className="flex gap-10 flex-wrap justify-center items-center mx-20">
             {Projects && Projects.map((project) => (
-              <Card key={project.key} className=' bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:border-white/30 dark:text-white dark:hover:shadow-white'>
+              <Card key={project.key} className=' bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:border-white/30 dark:text-white '>
                 <CardHeader>
                   <div className="w-[7vw]">
                     <img src={img} />
@@ -37,7 +37,7 @@ function RouteComponent() {
                 <CardContent>
                   <div className="text-2xl font-bold">{project.projectName}</div>
                   <div className="text-gray-500 text-sm">{project.shortText}</div>
-                  <Button className="mt-4 text-lg p-6" variant="secondary" asChild>
+                  <Button className="mt-4 text-lg p-6 hover:bg-gray-700/30 dark:border hover:dark:border-white" variant="secondary" asChild>
                     <Link
                       to='/projects/$projectName'
                       params={{ projectName: project.projectName }}
