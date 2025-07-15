@@ -8,8 +8,5 @@
 3. bugFix: fixed a bug that might have been pushed with prior with the current commit
 
 ### current issues i'm facing
-- the not coming soon route is being triggered instead of the notFound component i set in the main.tsx
-- second
-- third
-
+- There's an issue with the route in the `$projectName` file.. It keeps giving an error in the terminal
 
