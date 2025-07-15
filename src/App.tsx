@@ -103,7 +103,7 @@ function App() {
             </p>
 
             <p>
-              <span className="font-semibold">My mission</span> is to build tools that matter, share my process openly, inspire others and eventually get recognized as a thought leader in the industry
+              <span className="font-semibold">My mission</span> is to build tools that matter, share my process openly, inspire others and eventually get recognized as a thought leader in the industry.
             </p>
 
             <div>

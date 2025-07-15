@@ -6,7 +6,7 @@ import Footer from '../components/sections/FooterSection'
 export const Route = createRootRoute({
   component: () => (
     <>
-      <div className='flex flex-col justify-between outline outline-emerald-300 min-h-screen'>
+      <div className='flex flex-col justify-between min-h-screen'>
 
         <div>
           <GlassPillNav />
