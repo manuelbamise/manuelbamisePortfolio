@@ -39,10 +39,7 @@ function RouteComponent() {
           transition={{ duration: 0.5 }}
         >
           <Button variant="secondary" size="lg" asChild>
-            <Link to="/projects" from='/projects/$projectName'
-              params={{ projectName: project }}
-            //#TODO: check the llm for how to fix the cannot find match for from /path/ error;
-            >
+            <Link to="/projects" from='/'            >
               <ArrowBigLeft className="mr-2" />
               Back to /projects
             </Link>
