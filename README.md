@@ -1,10 +1,5 @@
 # Portfolio page built by [Bamise](url) 
+This is the production branch of this project..Meaning that this version of the project is guaranteed to be bug free and stable to use.
 
 
 
-## How the commits are made
-1. process: used just to update the code with no change in mind
-2. feat: made a change relating to a feature of some sort
-3. bugFix: fixed a bug that might have been pushed with prior with the current commit
-
-# All issues and bugs on this project have been fixed
