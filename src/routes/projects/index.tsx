@@ -2,7 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import Projects from '../../lib/json/projects.json'
 import { Card, CardContent, CardHeader } from '../../components/ui/card'
 import { Button } from '../../components/ui/button'
-import img from '../../assets/img/img001.jpeg'
+// import img from '../../assets/img/img001.jpeg'
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 
@@ -29,10 +29,10 @@ function RouteComponent() {
         <main className="flex-grow ">
           <div className="flex gap-10 flex-wrap justify-center items-center mx-20">
             {Projects && Projects.map((project) => (
-              <Card key={project.key} className=' bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:border-white/30 dark:text-white '>
+              <Card key={project.key} className='md:max-w-[25vw] bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:border-white/30 dark:text-white '>
                 <CardHeader>
                   <div className="w-[7vw]">
-                    <img src={img} />
+                    {/* <img src={img} /> */}
                   </div>
                 </CardHeader>
                 <CardContent>
