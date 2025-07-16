@@ -7,6 +7,4 @@
 2. feat: made a change relating to a feature of some sort
 3. bugFix: fixed a bug that might have been pushed with prior with the current commit
 
-### current issues i'm facing
-- There's an issue with the route in the `$projectName` file.. It keeps giving an error in the terminal
-
+# All issues and bugs on this project have been fixed
