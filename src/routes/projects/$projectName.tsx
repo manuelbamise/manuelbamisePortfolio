@@ -56,7 +56,10 @@ function RouteComponent() {
 
       >
         <h1 className="text-2xl md:text-3xl font-bold">{project.projectName}</h1>
-        <p className="text-gray-700 dark:text-gray-300">{project.shortText}</p>
+        {/* <p className="text-gray-700 dark:text-gray-300">{project.shortText}</p> */}
+        <Button asChild className=' p-4  rounded-lg bg-white text-black border border-black/10 hover:shadow-xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white  dark:border-white/30'>
+          <a href={project.link} target='_blank' >check out project</a>
+        </Button>
 
         {/* Details Box */}
         <div className="rounded-xl shadow-2xl border p-6 dark:border-white/20">
@@ -79,6 +82,13 @@ function RouteComponent() {
                   {stack}
                 </Badge>
               ))}
+            </div>
+          </div>
+
+          <div className='mt-4'>
+            <h2 className="text-lg font-semibold mb-2">Status</h2>
+            <div className="w-full lg:w-1/2 flex flex-wrap gap-2">
+              <Badge className={`p-2 rounded-full ${project.status == "completed" ? "bg-green-600/80" : "bg-red-600"}`}>{project.status}</Badge>
             </div>
           </div>
         </div>

@@ -1,29 +1,29 @@
 [
   {
     "key": 1,
-    "jobDuration": "jan 2024 - present",
-    "jobTitle": "Fullstack engineer",
-    "companyName": "Bimpe.co",
-    "companyLocation": "united Kingdom",
-    "shortDescription": "jj chsha  hbuhafa vgabbadf",
-    "tasksPerformed": "dgbjg jLorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit orci id libero vestibulum ullamcorper eget nec augue. Duis quis gravida nunc, eget faucibus nibh. Vestibulum ultricies ultrices ligula sed tincidunt. Praesent ut iaculis mauris. Duis vitae mattis ligula. Nullam convallis sodales ipsum et ullamcorper. Aliquam ornare tortor at tortor fermentum, ut mattis magna maximus. Nullam vel est eget sem rhoncus sagittis. Nam lobortis facilisis sapien nec ornare. Etiam turpis ipsum, tristique in ipsum in, luctus ullamcorper neque. Nunc eget quam ac odi"
+    "jobDuration": "May 2024 – Present",
+    "jobTitle": "Software Developer(part-time)",
+    "companyName": "SyncPro",
+    "companyLocation": "Remote(Nigeria)",
+    "shortDescription": "Joined the startup as an entry-level full-stack developer...",
+    "tasksPerformed": "Joined the startup as an entry-level full-stack developer, quickly adapting to a new tech stack including PostgreSQL, NestJS, and later Nuxt.js (Vue-based), despite having a background in React.  Navigated a steep learning curve, working across both backend and frontend tasks, and gaining hands-on experience in adapting to new ecosystems, tools, and workflows."
   },
   {
     "key": 2,
-    "jobDuration": "jan 2022 - Dec 2023",
-    "jobTitle": "systems associate",
-    "companyName": "Acxetech",
-    "companyLocation": "indiana",
-    "shortDescription": "jabfn ijsdjhaiub fubajf 7fb fbaygfjk afg",
-    "tasksPerformed": "indiana dgbjg jLorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit orci id libero vestibulum ullamcorper eget nec augue. Duis quis gravida nunc, eget faucibus nibh. Vestibulum ultricies ultrices ligula sed tincidunt. Praesent ut iaculis mauris. Duis vitae mattis ligula. Nullam convallis sodales ipsum et ullamcorper. Aliquam ornare tortor at tortor fermentum, ut mattis magna maximus. Nullam vel est eget sem rhoncus sagittis. Nam lobortis facilisis sapien nec ornare. Etiam turpis ipsum, tristique in ipsum in, luctus ullamcorper neque. Nunc eget qua"
+    "jobDuration": "Nov 2024 – Feb 2025",
+    "jobTitle": "Engineering lead/ Full-stack Developer(volunteer)",
+    "companyName": "TechTrenches",
+    "companyLocation": "Remote(Nigeria)",
+    "shortDescription": "Leading the development of a community team project...",
+    "tasksPerformed": "Leading the development of a community team project, actively contributing as a full-stack engineer while overseeing a frontend team and collaborating with the design team to ensure design consistency and feasibility.Act as a bridge between engineering and product, providing input on functionality, timelines, and user experience—functioning in a hybrid technical lead / product owner capacity."
   },
   {
     "key": 3,
-    "jobDuration": "jan 2019 - jan 2022",
-    "jobTitle": "software developer intern",
-    "companyName": "Brico corps",
-    "companyLocation": "saudi arabia",
-    "shortDescription": "huiofaif iffu8sdhf hfyanfjna suhjng hughjfb a ff",
-    "tasksPerformed": " saudi dgbjg jLorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit orci id libero vestibulum ullamcorper eget nec augue. Duis quis gravida nunc, eget faucibus nibh. Vestibulum ultricies ultrices ligula sed tincidunt. Praesent ut iaculis mauris. Duis vitae mattis ligula. Nullam convallis sodales ipsum et ullamcorper. Aliquam ornare tortor at tortor fermentum, ut mattis magna maximus. Nullam vel est eget sem rhoncus sagittis. Nam lobortis facilisis sapien nec ornare. Etiam turpis ipsum, tristique in ipsum in, luctus ullamcorper neque. Nunc eget quam"
+    "jobDuration": "Apr 2024 – Apr 2025",
+    "jobTitle": "Software Engineer(part-time)",
+    "companyName": "Bimpe",
+    "companyLocation": "Remote(United Kingdom)",
+    "shortDescription": "Developed and maintained web applications using PHP...",
+    "tasksPerformed": " Developed and maintained web applications using PHP, implementing efficient, secure backend logic for dynamic content and user interactions. Implemented debugging, testing, and troubleshooting processes to resolve issues, ensuring stability and security across applications"
   }
 ]
