@@ -84,6 +84,13 @@ function RouteComponent() {
               ))}
             </div>
           </div>
+
+          <div className='mt-4'>
+            <h2 className="text-lg font-semibold mb-2">Status</h2>
+            <div className="w-full lg:w-1/2 flex flex-wrap gap-2">
+              <Badge className={`p-2 rounded-full ${project.status == "completed" ? "bg-green-600/80" : "bg-red-600"}`}>{project.status}</Badge>
+            </div>
+          </div>
         </div>
       </motion.div>
     </motion.div>

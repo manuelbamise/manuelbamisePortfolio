@@ -17,7 +17,7 @@
   {
     "key": 2,
     "projectName": "sampleProject two",
-    "status": "completed",
+    "status": "In progress",
     "techStack": [
       "typescript",
       "react",
