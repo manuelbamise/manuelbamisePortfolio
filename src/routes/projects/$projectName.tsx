@@ -57,6 +57,9 @@ function RouteComponent() {
       >
         <h1 className="text-2xl md:text-3xl font-bold">{project.projectName}</h1>
         <p className="text-gray-700 dark:text-gray-300">{project.shortText}</p>
+        <Button asChild className=' p-4  rounded-lg bg-white text-black border border-black/10 hover:shadow-xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white  dark:border-white/30'>
+          <a href={project.link} target='_blank' >check out project</a>
+        </Button>
 
         {/* Details Box */}
         <div className="rounded-xl shadow-2xl border p-6 dark:border-white/20">
