@@ -81,7 +81,9 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, ease: 'easeOut' }}
           >
-            <Button variant='secondary' size='lg' className=" p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30">Download resume <FileSpreadsheet />  </Button>
+            <Button variant='secondary' size='lg' className=" p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30" asChild>
+              <a href='https://drive.google.com/file/d/17fFrWtfPF_tyiVIbga2m_Mqvu-CGvka8/view?usp=drive_link' target="_blank"> Download resume <FileSpreadsheet /> </a>
+            </Button>
           </motion.div>
 
           <motion.div className="px-6 md:px-20 mt-10 space-y-3 text-base md:text-lg leading-relaxed"
