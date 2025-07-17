@@ -8,6 +8,7 @@ import ExperienceSection from "./components/sections/ExperienceSection";
 import { Button } from "./components/ui/button";
 import { Briefcase, FileSpreadsheet } from "lucide-react";
 import { motion } from 'framer-motion'
+import { inject } from '@vercel/analytics'
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
   ];
 
   useEffect(() => {
-
+    inject()
     const interval = setInterval(() => {
       setIsAnimating(true);
       setTimeout(() => {
