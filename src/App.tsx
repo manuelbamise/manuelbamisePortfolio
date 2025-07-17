@@ -83,7 +83,7 @@ function App() {
             transition={{ duration: 1.5, ease: 'easeOut' }}
           >
             <Button variant='secondary' size='lg' className=" p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30" asChild>
-              <a href='https://drive.google.com/file/d/17fFrWtfPF_tyiVIbga2m_Mqvu-CGvka8/view?usp=drive_link' target="_blank"> Download resume <FileSpreadsheet /> </a>
+              <a href='https://drive.google.com/file/d/1CIbRQT92-7wCc5oizgOkDFkKJKvM8uE4/view?usp=drive_link' target="_blank"> Download resume <FileSpreadsheet /> </a>
             </Button>
           </motion.div>
 
