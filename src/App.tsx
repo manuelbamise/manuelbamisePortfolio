@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card } from "./components/ui/card";
 import img1 from "./assets/img/img001.jpeg"
+import img2 from "./assets/img/img002.jpeg"
 import ContactSection from "./components/sections/ContactSection";
 import MarqueeSection from "./components/sections/MarqueeSection";
 import ExperienceSection from "./components/sections/ExperienceSection";
@@ -15,9 +16,8 @@ function App() {
 
   const images = [
     { url: img1, rotate: "-rotate-12" },
-    { url: img1, rotate: "rotate-6" },
+    { url: img2, rotate: "rotate-6" },
     { url: img1, rotate: "-rotate-3" },
-    { url: img1, rotate: "rotate-12" },
   ];
 
   useEffect(() => {
@@ -68,7 +68,7 @@ function App() {
               transition={{ duration: 1.5, ease: 'easeOut' }}
             >
               <Card
-                className={`p-4 rounded-none w-full shadow-xl transition-all duration-300 ease-in-out
+                className={`p-4 md:h-[40vh] overflow-hidden rounded-none w-full shadow-xl transition-all duration-300 ease-in-out
         ${rotate} ${isAnimating ? "scale-90 opacity-0" : "scale-100 opacity-100"}`}
               >
                 <img src={url} alt="placeholderImage" className="w-full h-auto object-cover" />
