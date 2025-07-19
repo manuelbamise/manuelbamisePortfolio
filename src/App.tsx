@@ -1,28 +1,27 @@
-import { useEffect, useState } from "react";
-import { Card } from "./components/ui/card";
-import img1 from "./assets/img/img001.jpeg"
-import img2 from "./assets/img/img002.jpeg"
-import ContactSection from "./components/sections/ContactSection";
-import MarqueeSection from "./components/sections/MarqueeSection";
-import ExperienceSection from "./components/sections/ExperienceSection";
-import { Button } from "./components/ui/button";
-import { Briefcase, FileSpreadsheet } from "lucide-react";
-import { motion } from 'framer-motion'
-import { inject } from '@vercel/analytics'
+import { useEffect, useState } from 'react';
+import { Card } from './components/ui/card';
+import img1 from './assets/img/img001.jpeg';
+import img2 from './assets/img/img002.jpeg';
+import ContactSection from './components/sections/ContactSection';
+import MarqueeSection from './components/sections/MarqueeSection';
+import ExperienceSection from './components/sections/ExperienceSection';
+import { Button } from './components/ui/button';
+import { Briefcase, FileSpreadsheet } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { inject } from '@vercel/analytics';
 
 function App() {
-
   const [index, setIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const images = [
-    { url: img1, rotate: "-rotate-12" },
-    { url: img2, rotate: "rotate-6" },
-    { url: img1, rotate: "-rotate-3" },
+    { url: img1, rotate: '-rotate-12' },
+    { url: img2, rotate: 'rotate-6' },
+    { url: img1, rotate: '-rotate-3' },
   ];
 
   useEffect(() => {
-    inject()
+    inject();
     const interval = setInterval(() => {
       setIsAnimating(true);
       setTimeout(() => {
@@ -32,26 +31,24 @@ function App() {
     }, 3000); // every 3 seconds
 
     return () => clearInterval(interval); // cleanup on unmount
-  }, [images.length])
+  }, [images.length]);
 
   const { url, rotate } = images[index];
-  const currentYear = new Date().getFullYear()
-  const age = currentYear - 2006
+  const currentYear = new Date().getFullYear();
+  const age = currentYear - 2006;
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-
     >
       <div className=" flex-col  dark:bg-stone-950 mb-4">
-
         <main className="flex-1">
-
           <div className="px-6 md:px-20 mt-8 flex flex-col-reverse md:flex-row items-center gap-8">
             {/* Text Section */}
-            <motion.div className="w-full md:w-1/2 mt-4 text-center md:text-left"
+            <motion.div
+              className="w-full md:w-1/2 mt-4 text-center md:text-left"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.5, ease: 'easeOut' }}
@@ -63,57 +60,126 @@ function App() {
             </motion.div>
 
             {/* Image Card Section */}
-            <motion.div className="w-full sm:w-[300px] md:w-[400px]"
+            <motion.div
+              className="w-full sm:w-[300px] md:w-[400px]"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.5, ease: 'easeOut' }}
             >
               <Card
                 className={`p-4 md:h-[40vh] overflow-hidden rounded-none w-full shadow-xl transition-all duration-300 ease-in-out
-        ${rotate} ${isAnimating ? "scale-90 opacity-0" : "scale-100 opacity-100"}`}
+        ${rotate} ${isAnimating ? 'scale-90 opacity-0' : 'scale-100 opacity-100'}`}
               >
-                <img src={url} alt="placeholderImage" className="w-full h-auto object-cover" />
+                <img
+                  src={url}
+                  alt="placeholderImage"
+                  className="w-full h-auto object-cover"
+                />
               </Card>
             </motion.div>
           </div>
 
-          <motion.div className="mt-13 mx-20 flex items-center justify-center"
+          <motion.div
+            className="mt-13 mx-20 flex items-center justify-center"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, ease: 'easeOut' }}
           >
-            <Button variant='secondary' size='lg' className=" p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30" asChild>
-              <a href='https://drive.google.com/file/d/1CIbRQT92-7wCc5oizgOkDFkKJKvM8uE4/view?usp=drive_link' target="_blank"> Download resume <FileSpreadsheet /> </a>
+            <Button
+              variant="secondary"
+              size="lg"
+              className=" p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30"
+              asChild
+            >
+              <a
+                href="https://drive.google.com/file/d/1CIbRQT92-7wCc5oizgOkDFkKJKvM8uE4/view?usp=drive_link"
+                target="_blank"
+              >
+                {' '}
+                Download resume <FileSpreadsheet />{' '}
+              </a>
             </Button>
           </motion.div>
 
-          <motion.div className="px-6 md:px-20 mt-10 space-y-3 text-base md:text-lg leading-relaxed"
+          <motion.div
+            className="px-6 md:px-20 mt-10 space-y-3 text-base md:text-lg leading-relaxed"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, ease: 'easeOut' }}
           >
             <p>
-              <span className="font-semibold">Hey!</span> I'm <span className="font-bold">Emmanuel Oluwabamise Tobi</span>, an undergraduate Computer Science student and full-stack engineer who loves turning ideas into real, working products.
+              <span className="font-semibold">Hey!</span> I'm{' '}
+              <span className="font-bold">Emmanuel Oluwabamise Tobi</span>, an
+              undergraduate Computer Science student and full-stack engineer who
+              loves turning ideas into real, working products.
             </p>
             <p>
-              I'm a <span className="italic">self-taught developer</span> with over <span className="font-semibold">6 years of experience</span> based in Nigeria.
+              I'm a <span className="italic">self-taught developer</span> with
+              over <span className="font-semibold">6 years of experience</span>{' '}
+              based in Nigeria.
             </p>
             <p>
-              I began learning to code in <span className="font-semibold">2019</span>, even before I entered university to study Computer Science. While the classroom taught me theory, I taught myself the real-world skills that power modern software.
+              I began learning to code in{' '}
+              <span className="font-semibold">2019</span>, even before I entered
+              university to study Computer Science. While the classroom taught
+              me theory, I taught myself the real-world skills that power modern
+              software.
             </p>
             <p>
-              I'm flexible with any tech stack, though I lean toward modern tools. Currently, I work with <span className="font-medium text-blue-600 dark:text-blue-400">React</span>, <span className="font-medium text-green-600 dark:text-green-400">Vue</span>, <span className="font-medium text-pink-600 dark:text-pink-400">NestJS</span>, <span className="font-medium text-purple-600 dark:text-purple-400">Prisma</span>, and <span className="font-medium text-yellow-600 dark:text-yellow-400">TypeScript</span>.
+              I'm flexible with any tech stack, though I lean toward modern
+              tools. Currently, I work with{' '}
+              <span className="font-medium text-blue-600 dark:text-blue-400">
+                React
+              </span>
+              ,{' '}
+              <span className="font-medium text-green-600 dark:text-green-400">
+                Vue
+              </span>
+              ,{' '}
+              <span className="font-medium text-pink-600 dark:text-pink-400">
+                NestJS
+              </span>
+              ,{' '}
+              <span className="font-medium text-purple-600 dark:text-purple-400">
+                Prisma
+              </span>
+              , and{' '}
+              <span className="font-medium text-yellow-600 dark:text-yellow-400">
+                TypeScript
+              </span>
+              .
             </p>
 
             <p>
-              <span className="font-semibold">My mission</span> is to build tools that matter, share my process openly, inspire others and eventually get recognized as a thought leader in the industry.
+              <span className="font-semibold">My mission</span> is to build
+              tools that matter, share my process openly, inspire others and
+              eventually get recognized as a thought leader in the industry.
             </p>
 
             <div>
-              <p>I’m currently available for internships, full-time opportunities, and freelance projects.</p>
-              <p> If you’re looking for someone passionate, skilled, and ready to contribute, I’m here to help bring your ideas to life!</p></div>
-            <Button variant='secondary' size='lg' className=" p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30" asChild>
-              <a target="_blank" href="mailto:emmabamise1930@gmail.com?subject=Interested%20in%20Hiring%20You"> <Briefcase /> Hire Me</a>
+              <p>
+                I’m currently available for internships, full-time
+                opportunities, and freelance projects.
+              </p>
+              <p>
+                {' '}
+                If you’re looking for someone passionate, skilled, and ready to
+                contribute, I’m here to help bring your ideas to life!
+              </p>
+            </div>
+            <Button
+              variant="secondary"
+              size="lg"
+              className=" p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30"
+              asChild
+            >
+              <a
+                target="_blank"
+                href="mailto:emmabamise1930@gmail.com?subject=Interested%20in%20Hiring%20You"
+              >
+                {' '}
+                <Briefcase /> Hire Me
+              </a>
             </Button>
           </motion.div>
 
@@ -121,21 +187,18 @@ function App() {
             <MarqueeSection />
           </div>
 
-          <div className="mt-13 mx-20">
+          {/* TODO create extend the media query component for new styles for smaller screens */}
+          <div className="mt-13 mx-20 sm:mx-5 sm:border sm:border-red-300">
             <ExperienceSection />
           </div>
 
           <div className="mt-13 mx-20">
             <ContactSection />
           </div>
-
-
-        </main >
-
-      </div >
+        </main>
+      </div>
     </motion.div>
-  )
+  );
 }
 
-
-export default App
+export default App;
