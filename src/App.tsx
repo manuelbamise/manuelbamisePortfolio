@@ -1,204 +1,94 @@
-import { useEffect, useState } from 'react';
-import { Card } from './components/ui/card';
-import img1 from './assets/img/img001.jpeg';
-import img2 from './assets/img/img002.jpeg';
-import ContactSection from './components/sections/ContactSection';
-import MarqueeSection from './components/sections/MarqueeSection';
-import ExperienceSection from './components/sections/ExperienceSection';
-import { Button } from './components/ui/button';
-import { Briefcase, FileSpreadsheet } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { inject } from '@vercel/analytics';
 
-function App() {
-  const [index, setIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+import {
+  Home,
+  Github,
+  Twitter,
+  Music,
+  BookOpen,
+  Linkedin
+} from 'lucide-react'
 
-  const images = [
-    { url: img1, rotate: '-rotate-12' },
-    { url: img2, rotate: 'rotate-6' },
-    { url: img1, rotate: '-rotate-3' },
-  ];
+const socialIcons = [
+  { icon: <Home className="w-5 h-5" />, href: '#' },
+  { icon: <Github className="w-5 h-5" />, href: '#' },
+  { icon: <Music className="w-5 h-5" />, href: '#' },
+  { icon: <BookOpen className="w-5 h-5" />, href: '#' },
+  { icon: <Linkedin className="w-5 h-5" />, href: '#' }
+]
 
-  useEffect(() => {
-    inject();
-    const interval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setIndex((prev) => (prev + 1) % images.length);
-        setIsAnimating(false);
-      }, 300); // timing for shrink before change;
-    }, 3000); // every 3 seconds
+const experiences = [
+  { date: 'Jul 2024 - Present', role: 'Co-Founder', company: 'diepen.io', color: 'bg-yellow-300' },
+  { date: 'Dec 2022 - Present', role: 'Educator', company: 'Miraya Tech', color: 'bg-pink-300' },
+  { date: 'Aug 2024 - Jun 2025', role: 'Frontend Dev', company: 'Heisenware', color: 'bg-blue-200' },
+  { date: 'Aug 2023 - Aug 2024', role: 'Full Stack Dev', company: 'Viind', color: 'bg-blue-200' },
+  { date: 'Mar 2022 - Aug 2023', role: 'Frontend Dev', company: 'CHECK24', color: 'bg-blue-200' },
+  { date: 'Jan 2020 - Dec 2021', role: 'Tattoo Artist', company: '', color: '' }
+]
 
-    return () => clearInterval(interval); // cleanup on unmount
-  }, [images.length]);
-
-  const { url, rotate } = images[index];
-  const currentYear = new Date().getFullYear();
-  const age = currentYear - 2006;
-
+export default function App() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-    >
-      <div className=" flex-col  dark:bg-stone-950 mb-4">
-        <main className="flex-1">
-          <div className="px-6 md:px-20 mt-8 flex flex-col-reverse md:flex-row items-center gap-8">
-            {/* Text Section */}
-            <motion.div
-              className="w-full md:w-1/2 mt-4 text-center md:text-left"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5, ease: 'easeOut' }}
-            >
-              <div className="text-4xl md:text-5xl font-bold mb-2">bamise.</div>
-              <div className="text-xl md:text-3xl text-gray-600 dark:text-gray-300">
-                a {age} year old software engineer who likes to build things.
-              </div>
-            </motion.div>
-
-            {/* Image Card Section */}
-            <motion.div
-              className="w-full sm:w-[300px] md:w-[400px]"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.5, ease: 'easeOut' }}
-            >
-              <Card
-                className={`p-4 md:h-[40vh] overflow-hidden rounded-none w-full shadow-xl transition-all duration-300 ease-in-out
-        ${rotate} ${isAnimating ? 'scale-90 opacity-0' : 'scale-100 opacity-100'}`}
-              >
-                <img
-                  src={url}
-                  alt="placeholderImage"
-                  className="w-full h-auto object-cover"
-                />
-              </Card>
-            </motion.div>
-          </div>
-
-          <motion.div
-            className="mt-13 mx-20 flex items-center justify-center"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, ease: 'easeOut' }}
-          >
-            <Button
-              variant="secondary"
-              size="lg"
-              className=" p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30"
-              asChild
-            >
-              <a
-                href="https://drive.google.com/file/d/1CIbRQT92-7wCc5oizgOkDFkKJKvM8uE4/view?usp=drive_link"
-                target="_blank"
-              >
-                {' '}
-                Download resume <FileSpreadsheet />{' '}
-              </a>
-            </Button>
-          </motion.div>
-
-          <motion.div
-            className="px-6 md:px-20 mt-10 space-y-3 text-base md:text-lg leading-relaxed"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, ease: 'easeOut' }}
-          >
-            <p>
-              <span className="font-semibold">Hey!</span> I'm{' '}
-              <span className="font-bold">Emmanuel Oluwabamise Tobi</span>, an
-              undergraduate Computer Science student and full-stack engineer who
-              loves turning ideas into real, working products.
-            </p>
-            <p>
-              I'm a <span className="italic">self-taught developer</span> with
-              over <span className="font-semibold">6 years of experience</span>{' '}
-              based in Nigeria.
-            </p>
-            <p>
-              I began learning to code in{' '}
-              <span className="font-semibold">2019</span>, even before I entered
-              university to study Computer Science. While the classroom taught
-              me theory, I taught myself the real-world skills that power modern
-              software.
-            </p>
-            <p>
-              I'm flexible with any tech stack, though I lean toward modern
-              tools. Currently, I work with{' '}
-              <span className="font-medium text-blue-600 dark:text-blue-400">
-                React
-              </span>
-              ,{' '}
-              <span className="font-medium text-green-600 dark:text-green-400">
-                Vue
-              </span>
-              ,{' '}
-              <span className="font-medium text-pink-600 dark:text-pink-400">
-                NestJS
-              </span>
-              ,{' '}
-              <span className="font-medium text-purple-600 dark:text-purple-400">
-                Prisma
-              </span>
-              , and{' '}
-              <span className="font-medium text-yellow-600 dark:text-yellow-400">
-                TypeScript
-              </span>
-              .
-            </p>
-
-            <p>
-              <span className="font-semibold">My mission</span> is to build
-              tools that matter, share my process openly, inspire others and
-              eventually get recognized as a thought leader in the industry.
-            </p>
-
-            <div>
-              <p>
-                I’m currently available for internships, full-time
-                opportunities, and freelance projects.
-              </p>
-              <p>
-                {' '}
-                If you’re looking for someone passionate, skilled, and ready to
-                contribute, I’m here to help bring your ideas to life!
-              </p>
-            </div>
-            <Button
-              variant="secondary"
-              size="lg"
-              className=" p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30"
-              asChild
-            >
-              <a
-                target="_blank"
-                href="mailto:emmabamise1930@gmail.com?subject=Interested%20in%20Hiring%20You"
-              >
-                {' '}
-                <Briefcase /> Hire Me
-              </a>
-            </Button>
-          </motion.div>
-
-          <div className="mt-13 mx-20">
-            <MarqueeSection />
-          </div>
-
-          {/* TODO create extend the media query component for new styles for smaller screens */}
-          <div className="mt-13 mx-20 sm:mx-5 sm:border sm:border-red-300">
-            <ExperienceSection />
-          </div>
-
-          <div className="mt-13 mx-20">
-            <ContactSection />
-          </div>
-        </main>
+    <div className="max-w-3xl mx-auto p-4 font-sans">
+      {/* Top Nav */}
+      <div className="flex items-center justify-between border rounded-full px-4 py-2 shadow-sm mb-6">
+        <div className="flex space-x-4">
+          {socialIcons.map((item, i) => (
+            <a key={i} href={item.href} className="hover:text-gray-700">
+              {item.icon}
+            </a>
+          ))}
+        </div>
+        <button className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium">
+          Book a call
+        </button>
       </div>
-    </motion.div>
-  );
+
+      {/* Profile Section */}
+      <div className="text-center">
+        <img
+          src="https://i.imgur.com/rsYhA3G.png" // replace with actual image path or imported image
+          alt="Avatar"
+          className="w-20 h-20 rounded-full mx-auto mb-4"
+        />
+        <h1 className="text-3xl font-bold mb-1">Hey, I'm Miraya.<br />Engineer & Designer.</h1>
+        <p className="text-gray-500 text-sm max-w-md mx-auto mb-4">
+          Most designers can't code. Most developers can't design. I do both.
+          <br />
+          3 years turning ideas into profitable products.
+        </p>
+        <div className="flex justify-center gap-4 mt-4">
+          <button className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium">
+            Hire me
+          </button>
+          <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium flex items-center">
+            <span className="w-2 h-2 bg-green-500 rounded-full mr-2" />
+            Open to Opportunities
+          </span>
+        </div>
+      </div>
+
+      {/* Work Experience */}
+      <div className="mt-12">
+        <h2 className="text-xl font-semibold mb-4">Work Experience</h2>
+        <ul className="space-y-4">
+          {experiences.map((exp, i) => (
+            <li key={i} className="flex justify-between text-sm text-gray-700">
+              <span className="w-1/3 text-gray-400">{exp.date}</span>
+              <span className="w-2/3 flex justify-between">
+                <span>{exp.role}</span>
+                {exp.company && (
+                  <a
+                    href="#"
+                    className={`ml-2 px-2 py-0.5 rounded-full text-xs font-medium ${exp.color}`}
+                  >
+                    {exp.company}
+                  </a>
+                )}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )
 }
 
-export default App;
