@@ -2,7 +2,6 @@
 import {
   Home,
   Github,
-  Twitter,
   Music,
   BookOpen,
   Linkedin
