@@ -112,13 +112,15 @@ import {
   Instagram,
   Music,
   BookOpen,
-  Linkedin
+  Linkedin,
+  ArrowRight
 } from 'lucide-react'
 import { Badge } from './components/ui/badge'
 import { Button } from './components/ui/button'
 import ThemeSwitcher from './lib/theme-config/themeSwitcher'
 import img from "@/assets/img/img001.jpeg"
 import { BsTelegram, BsTwitterX } from 'react-icons/bs'
+import { GlassPillNav } from './components/additionalComponents/GlassPillNav'
 
 const experiences = [
   {
@@ -145,7 +147,7 @@ export default function App() {
   return (
     <div className="container mx-auto px-4 py-6 text-lg md:w-[50vw] text-black dark:text-white">
 
-
+      <GlassPillNav />
       {/* Top Nav */}
       <div className='flex items-center justify-center'>
         <div className="flex items-center justify-between border rounded-lg px-4 py-2 w-fit space-x-4">
@@ -206,7 +208,7 @@ export default function App() {
           I'm flexible with any tech stack, though I lean toward modern tools. Currently, I work with <span className="font-medium text-blue-600 dark:text-blue-400">React</span>, <span className="font-medium text-green-600 dark:text-green-400">Vue</span>, <span className="font-medium text-pink-600 dark:text-pink-400">NestJS</span>, <span className="font-medium text-purple-600 dark:text-purple-400">Prisma</span>, and <span className="font-medium text-yellow-600 dark:text-yellow-400">TypeScript</span>.
 
         </p>
-        <p className='mt-3'>i also blog about programming, philosophy and everything in justify-between </p>
+        <p className='mt-3'>i also <a href='#' className='hover:text-emerald-500'>blog about programming, philosophy and everything in between</a> </p>
         <p className='mt-3'>When i'm not coding. I'm reading, watching anime or raking up points in AQ3D or chess(I think my ELO rating is at 400 now). </p>
         <span>One piece is overrated, watching only isekai doesn't make you an anime fan, Eren yeager was right.</span>
         <p className='mt-3'>I'm not just a developer. I'm a systems thinker who builds with purpose</p>
@@ -222,6 +224,24 @@ export default function App() {
           height="150"
           className="w-full bg-white mt-14"
         ></iframe>
+
+        <div className='flex items-center justify-center'>
+          <Button
+            variant="secondary"
+            size="lg"
+            className="p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-black dark:border-black"
+            asChild
+          >
+            <a
+              href="#"
+              target="_blank"
+            >
+              <p>Start reading</p>
+
+              <ArrowRight />
+            </a>
+          </Button>
+        </div>
       </section>
 
       {/* Work Experience */}
