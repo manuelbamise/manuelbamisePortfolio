@@ -1,118 +1,7 @@
-//
-// import { FileSpreadsheet, LinkIcon, LucideTelescope, Twitter } from 'lucide-react'
-// import { Badge } from './components/ui/badge'
-// import { Button } from './components/ui/button'
-// import ThemeSwitcher from './lib/theme-config/themeSwitcher'
-//
-// import img from "@/assets/img/img001.jpeg"
-//
-// const experiences = [
-//   { date: 'Jul 2024 - Present', role: 'Co-Founder', company: 'diepen.io', textColor: 'text-yellow-800', icon: <LinkIcon />, bgColor: 'bg-yellow-300/60' },
-// ]
-//
-// export default function App() {
-//   return (
-//     <div className="lg:mx-[30%] text-lg">
-//
-//       <ThemeSwitcher />
-//
-//       {/* Top Nav */}
-//       <div className="flex items-center justify-between border rounded-full px-4 py-2 shadow-sm mb-6">
-//         nav goes here
-//       </div>
-//
-//
-//       <div className='border'>
-//         <img src={img} alt='profile avatar' className='rounded-full overflow-hidden md:h-40 md:w-40 ' />
-//       </div>
-//
-//
-//
-//       <div className='border mt-4'>
-//         <div className='text-5xl font-semibold'>Hey, I'm bamise.</div>
-//         <div className='text-4xl font-bold capitalize mt-2'>software engineer and digital creator.</div>
-//         <div className='font-thin my-2 text-xl text-gray-700 '>Most developers just follow instructions. I think long-term to ensure your software meets user needs everytime.</div>
-//         <div className='flex items-center justify-around mt-8 text-xl'>
-//           <Button className='rounded p-4 w-[200px] h-[50px] '>Hire me</Button>
-//           <Badge className='rounded-full bg-green-800 p-4 w-[200px] h-[50px] '>
-//             <span className="w-2 h-2 bg-green-500 rounded-full mr-2" />
-//             open to opportunities </Badge>
-//         </div>
-//       </div>
-//
-//
-//       <div className='border mt-12'>
-//         <p className='font-semibold text-2xl'>About</p>
-//         <p>I'm bamise. Software engineer with over 6 years of experience based in Nigeria.</p>
-//
-//         <p className='mt-3'>
-//           <span className='font-semibold'>Here's what i actually do:</span> I take half-baked product ideas and turn them into structured, scalable backend systems — with clean APIs, clear role logic, and no loose ends.
-//
-//         </p>
-//         <p className='mt-3'> Most developers just follow instructions. I question assumptions, spot edge cases early, and build like I’ll be maintaining it in five years.
-//
-//         </p>
-//         <p>
-//           While others patch features, I architect solutions. Your tech debt shrinks. Your roadmap gets clearer. And things finally make sense — both for devs and users.
-//         </p>
-//         <p className='mt-3'>i also blog about programming, philosophy and everything in justify-between </p>
-//         <p className='mt-3'>When i'm not coding. I'm reading, watching anime or raking up points in AQ3D or CAC. </p>
-//         <p>One piece is overrated, watching only isekai doesn't make you an anime fan, Eren yeager was right.</p>
-//         <p className='mt-3'>I'm not just a developer. I'm a systems thinker who builds with purpose</p>
-//       </div>
-//
-//
-//
-//       <div className='flex flex-col items-center justify-center bg-white mt-6 pt-3'>
-//         <div className='text-3xl font-semibold text-black'>subscribe to the newsletter</div>
-//         <div className='text-lg font-semibold text-black'>subscribe to newsletter</div>
-//         <iframe src="https://manuelbamise1.substack.com/embed" width="100%" height="150"   ></iframe>
-//       </div>
-//
-//
-//
-//       {/* Work Experience */}
-//       <div className="mt-12">
-//         <h2 className="text-2xl font-semibold mb-4">Work Experience</h2>
-//         <ul className="space-y-4">
-//           {experiences && experiences.map((exp, index) => (
-//             <li key={index} className='flex items-center justify-between'>
-//               <div>{exp.date}</div>
-//               <div>{exp.role} at <Badge className={`${exp.bgColor} rounded p-4 w-[120px] h-[50px]`}><span className={`${exp.textColor} flex items-center justify-between font-bold w-full`}>{exp.icon} {exp.company}</span></Badge></div>
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-//
-//       <div className='flex items-center justify-center mt-12'>
-//         <Button variant='secondary' size='lg' className=" p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-white dark:hover:shadow-white dark:border-white/30" asChild>
-//           <a href='https://drive.google.com/file/d/1CIbRQT92-7wCc5oizgOkDFkKJKvM8uE4/view?usp=drive_link' target="_blank"> Download resume <FileSpreadsheet /> </a>
-//         </Button></div>
-//
-//
-//       <div className='mt-12 '>
-//         <div className='text-2xl font-semibold '>Get in touch</div>
-//         <div className='text-lg mb-4 '>
-//           Building something that needs to convert? Need a design engineer who actually ships products that make money? I'm down to work on projects that solve real problems. Hit me up if you're serious about results.</div>
-//
-//         <div className='flex mb-12 items-center justify-around'>
-//           <Button
-//             className="w-16 h-16 sm:w-30 border sm:h-13  p-4 sm:p-5 rounded-lg flex items-center justify-center bg-white text-black "
-//           >          <a href='#'><Twitter /> </a>
-//           </Button>
-//         </div>
-//       </div>
-//     </div>
-//   )
-// }
-
 import {
-  FileSpreadsheet, LinkIcon, Twitter, Home,
-  Github,
-  Instagram,
+  FileSpreadsheet, LinkIcon, Home,
   Music,
   BookOpen,
-  Linkedin,
   ArrowRight
 } from 'lucide-react'
 import { Badge } from './components/ui/badge'
@@ -120,7 +9,6 @@ import { Button } from './components/ui/button'
 import ThemeSwitcher from './lib/theme-config/themeSwitcher'
 import img from "@/assets/img/img001.jpeg"
 import { BsTelegram, BsTwitterX } from 'react-icons/bs'
-import { GlassPillNav } from './components/additionalComponents/GlassPillNav'
 
 const experiences = [
   {
@@ -135,11 +23,8 @@ const experiences = [
 
 const icons = [
   { icon: <Home size={20} />, link: '#' },
-  { icon: <Github size={20} />, link: '#' },
-  { icon: <Instagram size={20} />, link: '#' },
   { icon: <Music size={20} />, link: '#' },
   { icon: <BookOpen size={20} />, link: '#' },
-  { icon: <Linkedin size={20} />, link: '#' },
 ];
 
 
@@ -147,7 +32,6 @@ export default function App() {
   return (
     <div className="container mx-auto px-4 py-6 text-lg md:w-[50vw] text-black dark:text-white">
 
-      <GlassPillNav />
       {/* Top Nav */}
       <div className='flex items-center justify-center'>
         <div className="flex items-center justify-between border rounded-lg px-4 py-2 w-fit space-x-4">
