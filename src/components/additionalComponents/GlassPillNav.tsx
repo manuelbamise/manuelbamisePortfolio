@@ -2,11 +2,12 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useRouter } from '@tanstack/react-router';
-import { Menu, X } from 'lucide-react';
+import { Home, Link2, Menu, X } from 'lucide-react';
 import ThemeSwitcher from '../../lib/theme-config/themeSwitcher.tsx';
+import { FaGithub } from 'react-icons/fa';
 
 export const GlassPillNav: React.FC = () => {
-  type navItemTypes = 'Home' | 'Projects' | 'Video content' | 'Blog' | 'ThemeSwitcher';
+  type navItemTypes = 'Home' | 'links' | 'ThemeSwitcher';
 
   const [activeTab, setActiveTab] = useState<navItemTypes>('Home');
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,16 +16,16 @@ export const GlassPillNav: React.FC = () => {
 
   type navItem = {
     label: string;
-    type: 'tab' | 'custom';
+    type: 'route' | 'custom';
     route?: string;
-    component?: React.ReactNode;
+    href?: string,
+    component: React.ReactNode;
   };
 
   const navItems: navItem[] = useMemo(() => [
-    { label: 'Home', type: 'tab', route: '/' },
-    { label: 'Projects', type: 'tab', route: '/projects' },
-    { label: 'Video content', type: 'tab', route: '/video-content' },
-    { label: 'Blog', type: 'tab', route: '/blog' },
+    { label: 'Home', type: 'route', route: '/', component: <Home /> },
+    { label: 'Links', type: 'route', route: '/links', component: <Link2 /> },
+    { label: 'Github', type: 'custom', component: <FaGithub size={30} /> },
     { label: 'ThemeSwitcher', type: 'custom', component: <ThemeSwitcher /> },
   ], []);
 
@@ -50,10 +51,10 @@ export const GlassPillNav: React.FC = () => {
       <div
         className={`
             ${menuOpen ? 'flex' : 'hidden'}
-            flex-col md:flex md:flex-row gap-3 md:gap-2 items-start md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-white/20 p-4 md:p-6 md:rounded-lg md:bg-white/10 md:border md:border-black md:dark:border-white backdrop-blur-md z-40       `}
+            flex-col md:flex md:flex-row gap-3 md:gap-2 items-start md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-white/20 p-4 md:p-4 md:rounded-lg md:bg-white/10 md:border md:border-black  backdrop-blur-md z-40       `}
       >
         {navItems.map((item) =>
-          item.type === 'tab' ? (
+          item.type == 'route' ? (
             <div key={item.label}>
               <div
                 onClick={() => {
@@ -67,16 +68,13 @@ export const GlassPillNav: React.FC = () => {
                   `}
               >
                 <Link to={item.route} className="block px-6 py-3.5 w-full h-full">
-                  {item.label}
+                  {item.component}
                 </Link>
               </div>
             </div>
-          ) : (
-            <div key={item.label} className="mt-2 md:mt-0">
-              {item.component}
-            </div>
-          )
-        )}
+          ) : (<div key={item.label} className='text-black dark:text-white hover:bg-gray-700/10 dark:hover:bg-white/10 rounded-lg transition-all duration-300 cursor-pointer'><a href={item.href} className='block px-6 py-3.5 w-full h-full'>
+            {item.component}
+          </a></div>))}
       </div>
     </div>
   );

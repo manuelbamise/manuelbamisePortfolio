@@ -1,56 +1,20 @@
 import {
-  FileSpreadsheet, LinkIcon, Home,
-  Music,
-  BookOpen,
-  ArrowRight
+  FileSpreadsheet, ArrowRight
 } from 'lucide-react'
 import { Badge } from './components/ui/badge'
 import { Button } from './components/ui/button'
-import ThemeSwitcher from './lib/theme-config/themeSwitcher'
 import img from "@/assets/img/img001.jpeg"
 import { BsTelegram, BsTwitterX } from 'react-icons/bs'
+import ExperienceSection from './components/sections/ExperienceSection'
 
-const experiences = [
-  {
-    date: 'Jul 2024 - Present',
-    role: 'Co-Founder',
-    company: 'diepen.io',
-    textColor: 'text-yellow-800',
-    icon: <LinkIcon className="w-4 h-4 mr-1" />,
-    bgColor: 'bg-yellow-300/60'
-  },
-]
 
-const icons = [
-  { icon: <Home size={20} />, link: '#' },
-  { icon: <Music size={20} />, link: '#' },
-  { icon: <BookOpen size={20} />, link: '#' },
-];
+
 
 
 export default function App() {
   return (
     <div className="container mx-auto px-4 py-6 text-lg md:w-[50vw] text-black dark:text-white">
 
-      {/* Top Nav */}
-      <div className='flex items-center justify-center'>
-        <div className="flex items-center justify-between border rounded-lg px-4 py-2 w-fit space-x-4">
-          <div className="flex items-center space-x-4">
-            {icons.map((item, index) => (
-              <div key={index} className="flex items-center space-x-4">
-                <a href={item.link} className="text-gray-800 dark:text-gray-200 hover:text-black">
-                  {item.icon}
-                </a>
-                {(index === 0 || index === 4) && (
-                  <div className="h-4 w-px bg-gray-300"></div> // vertical divider
-                )}
-              </div>
-            ))}
-          </div>
-          < ThemeSwitcher />
-        </div>
-
-      </div>
       {/* Profile Image */}
       <div className="flex justify-center mb-6">
         <img
@@ -130,21 +94,7 @@ export default function App() {
 
       {/* Work Experience */}
       <section className="mt-12">
-        <h3 className="text-2xl font-semibold mb-4">Work Experience</h3>
-        <ul className="space-y-4">
-          {experiences.map((exp, i) => (
-            <li key={i} className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <span className="text-gray-600 dark:text-gray-400">{exp.date}</span>
-              <span className="flex items-center gap-2">{exp.role} at
-                <Badge className={`${exp.bgColor} rounded px-3 py-2`}>
-                  <span className={`flex items-center font-semibold ${exp.textColor}`}>
-                    {exp.icon} {exp.company}
-                  </span>
-                </Badge>
-              </span>
-            </li>
-          ))}
-        </ul>
+        <ExperienceSection />
       </section>
 
       {/* Resume Download */}
@@ -180,7 +130,7 @@ export default function App() {
               href="#"
               target="_blank"
             >
-              <BsTwitterX />
+              <BsTwitterX size={30} />
             </a>
           </Button>
 
@@ -194,7 +144,7 @@ export default function App() {
               href="#"
               target="_blank"
             >
-              <BsTelegram />
+              <BsTelegram size={30} />
             </a>
           </Button>
         </div>
