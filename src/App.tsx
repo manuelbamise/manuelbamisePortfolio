@@ -8,7 +8,7 @@ import img from "@/assets/img/img001.jpeg"
 import { BsTelegram, BsTwitterX } from 'react-icons/bs'
 import ExperienceSection from './components/sections/ExperienceSection'
 import { motion } from "motion/react"
-
+import { Analytics } from "@vercel/analytics/react"
 
 
 
@@ -182,6 +182,7 @@ export default function App() {
               </a>
             </Button>
           </div>
+          <Analytics />
         </section>
       </motion.div>
     </div>
