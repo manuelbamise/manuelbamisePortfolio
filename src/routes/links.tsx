@@ -53,7 +53,7 @@ function RouteComponent() {
       <div className='flex flex-col items-center justify-center gap-2'>
 
         <p className='font-semibold text-2xl'>bamise</p>
-        <p>Software engineer & Digital creator</p>
+        <p className='text-center text-sm md:text-lg'>Software engineer & Digital creator</p>
       </div>
 
       <motion.div
@@ -68,7 +68,7 @@ function RouteComponent() {
           <Button
             key={index}
             size="lg"
-            className="h-16 md:w-[50%] text-xl font-normal"
+            className="h-16 w-full lg:w-[50%] text-xl font-normal"
             asChild
           >
             <a
@@ -86,7 +86,7 @@ function RouteComponent() {
         ))}
       </motion.div>
 
-      <div className="flex items-center justify-center mt-12 gap-5">
+      <div className="flex flex-wrap items-center justify-center mt-12 gap-5">
 
         {bottomLinks && bottomLinks.map((btn, index) => (
           <Button
