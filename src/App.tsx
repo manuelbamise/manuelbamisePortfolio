@@ -1,5 +1,6 @@
 import {
-  FileSpreadsheet, ArrowRight
+  FileSpreadsheet, ArrowRight,
+  Briefcase
 } from 'lucide-react'
 import { Badge } from './components/ui/badge'
 import { Button } from './components/ui/button'
@@ -32,7 +33,9 @@ export default function App() {
           Most developers just follow instructions. I think long-term to ensure your software meets user needs every time.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4">
-          <Button className="w-48 rounded-lg h-12">Hire me</Button>
+          <Button className="w-48 rounded-lg h-12" asChild>
+            <a target="_blank" href="mailto:emmabamise1930@gmail.com?subject=Interested%20in%20Hiring%20You"> <Briefcase /> Hire Me</a>
+          </Button>
           <Badge className="rounded-lg bg-green-800/80 dark:bg-green-800 p-4 w-[200px] h-[50px] text-white flex items-center">
             <span className="w-2 h-2 bg-green-500 rounded-full mr-2" />
             Open to Opportunities
@@ -56,16 +59,18 @@ export default function App() {
           I'm flexible with any tech stack, though I lean toward modern tools. Currently, I work with <span className="font-medium text-blue-600 dark:text-blue-400">React</span>, <span className="font-medium text-green-600 dark:text-green-400">Vue</span>, <span className="font-medium text-pink-600 dark:text-pink-400">NestJS</span>, <span className="font-medium text-purple-600 dark:text-purple-400">Prisma</span>, and <span className="font-medium text-yellow-600 dark:text-yellow-400">TypeScript</span>.
 
         </p>
-        <p className='mt-3'>i also <a href='#' className='hover:text-emerald-500'>blog about programming, philosophy and everything in between</a> </p>
-        <p className='mt-3'>When i'm not coding. I'm reading, watching anime or raking up points in AQ3D or chess(I think my ELO rating is at 400 now). </p>
+        <p className='mt-3'>i also <a href='https://manuelbamise1.substack.com/' target='_blank' className='hover:text-emerald-500'>blog about programming, philosophy and everything in between</a> </p>
+        <p className='mt-3'>When i'm not coding. I'm reading, watching anime or raking up points in chess(I think my ELO rating is at 400 now). </p>
         <span>One piece is overrated, watching only isekai doesn't make you an anime fan, Eren yeager was right.</span>
         <p className='mt-3'>I'm not just a developer. I'm a systems thinker who builds with purpose</p>
       </div>
 
       {/* Substack Newsletter */}
-      <section className="bg-white dark:bg-white text-black rounded-xl shadow-md p-6 mt-12">
+      <section className="rounded-xl shadow-md p-6 mt-12">
         <h3 className="text-2xl font-semibold text-center mb-2">Subscribe to the newsletter</h3>
-        <p className="text-center mb-4">Get updates on coding, product, and anime philosophy</p>
+        <p className="text-center mb-4">Everything and nothing at the same time..
+
+          All I can promise is a well structured draft each time I publish</p>
         <iframe
           src="https://manuelbamise1.substack.com/embed"
           width="100%"
@@ -73,15 +78,14 @@ export default function App() {
           className="w-full bg-white mt-14"
         ></iframe>
 
-        <div className='flex items-center justify-center'>
+        <div className='flex items-center justify-center mt-4'>
           <Button
-            variant="secondary"
             size="lg"
-            className="p-6 bg-white text-black border border-black/10 hover:shadow-2xl hover:bg-transparent hover:border-black dark:bg-transparent dark:text-black dark:border-black"
+            className="p-6 "
             asChild
           >
             <a
-              href="#"
+              href="https://manuelbamise1.substack.com/"
               target="_blank"
             >
               <p>Start reading</p>
@@ -127,7 +131,7 @@ export default function App() {
             asChild
           >
             <a
-              href="#"
+              href="https://x.com/@manuelbamise"
               target="_blank"
             >
               <BsTwitterX size={30} />
@@ -141,7 +145,7 @@ export default function App() {
             asChild
           >
             <a
-              href="#"
+              href="https://t.me/manuelbamise"
               target="_blank"
             >
               <BsTelegram size={30} />

@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link, useRouter } from '@tanstack/react-router';
 import { Home, Link2, Menu, X } from 'lucide-react';
 import ThemeSwitcher from '../../lib/theme-config/themeSwitcher.tsx';
-import { FaGithub } from 'react-icons/fa';
 
 export const GlassPillNav: React.FC = () => {
   type navItemTypes = 'Home' | 'links' | 'ThemeSwitcher';
@@ -25,7 +24,6 @@ export const GlassPillNav: React.FC = () => {
   const navItems: navItem[] = useMemo(() => [
     { label: 'Home', type: 'route', route: '/', component: <Home /> },
     { label: 'Links', type: 'route', route: '/links', component: <Link2 /> },
-    { label: 'Github', type: 'custom', component: <FaGithub size={30} /> },
     { label: 'ThemeSwitcher', type: 'custom', component: <ThemeSwitcher /> },
   ], []);
 

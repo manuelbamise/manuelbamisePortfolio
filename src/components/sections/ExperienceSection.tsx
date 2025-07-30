@@ -1,16 +1,8 @@
 import { LinkIcon } from "lucide-react";
 import { Badge } from "../ui/badge";
+import experiences from '@/lib/json/experiences.json'
 
-const experiences = [
-  {
-    date: 'Jul 2024 - Present',
-    role: 'Co-Founder',
-    company: 'diepen.io',
-    textColor: 'text-yellow-800',
-    icon: <LinkIcon className="w-4 h-4 mr-1" />,
-    bgColor: 'bg-yellow-300/60'
-  },
-]
+
 
 const ExperienceSection = () => {
   return (
@@ -19,12 +11,16 @@ const ExperienceSection = () => {
       <ul className="space-y-4">
         {experiences.map((exp, i) => (
           <li key={i} className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-            <span className="text-gray-600 dark:text-gray-400">{exp.date}</span>
-            <span className="flex items-center gap-2">{exp.role} at
-              <Badge className={`${exp.bgColor} rounded px-3 py-2`}>
-                <span className={`flex items-center font-semibold ${exp.textColor}`}>
-                  {exp.icon} {exp.company}
-                </span>
+            <span className="text-gray-600 dark:text-gray-400">{exp.jobDuration}</span>
+            <span className="flex items-center gap-2">{exp.jobTitle} at
+              <Badge className={`${exp.bgColor} rounded-lg px-3 py-2`} asChild>
+                <a href={exp.link} target="_blank">
+
+                  <span className={`flex items-center font-semibold dark:text-black ${exp.textColor}`}>
+                    <LinkIcon /> {exp.companyName}
+                  </span>
+
+                </a>
               </Badge>
             </span>
           </li>
