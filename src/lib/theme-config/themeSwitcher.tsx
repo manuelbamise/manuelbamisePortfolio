@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button } from "../../components/ui/button";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "./use-theme";
-import type { Theme } from "./theme-provider";
+import type { Theme } from "./themeProvider.tsx";
 
 
 const ThemeSwitcher = () => {

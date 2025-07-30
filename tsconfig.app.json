@@ -24,7 +24,6 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    /* shadcn Config*/
     "baseUrl": ".",
     "paths": {
       "@/*": [

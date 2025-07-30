@@ -9,20 +9,12 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as VideoContentRouteImport } from './routes/video-content'
-import { Route as BlogRouteImport } from './routes/blog'
+import { Route as LinksRouteImport } from './routes/links'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ProjectsIndexRouteImport } from './routes/projects/index'
-import { Route as ProjectsProjectNameRouteImport } from './routes/projects/$projectName'
 
-const VideoContentRoute = VideoContentRouteImport.update({
-  id: '/video-content',
-  path: '/video-content',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
+const LinksRoute = LinksRouteImport.update({
+  id: '/links',
+  path: '/links',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -30,80 +22,40 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
-  id: '/projects/',
-  path: '/projects/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjectsProjectNameRoute = ProjectsProjectNameRouteImport.update({
-  id: '/projects/$projectName',
-  path: '/projects/$projectName',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/blog': typeof BlogRoute
-  '/video-content': typeof VideoContentRoute
-  '/projects/$projectName': typeof ProjectsProjectNameRoute
-  '/projects': typeof ProjectsIndexRoute
+  '/links': typeof LinksRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/blog': typeof BlogRoute
-  '/video-content': typeof VideoContentRoute
-  '/projects/$projectName': typeof ProjectsProjectNameRoute
-  '/projects': typeof ProjectsIndexRoute
+  '/links': typeof LinksRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/blog': typeof BlogRoute
-  '/video-content': typeof VideoContentRoute
-  '/projects/$projectName': typeof ProjectsProjectNameRoute
-  '/projects/': typeof ProjectsIndexRoute
+  '/links': typeof LinksRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/blog'
-    | '/video-content'
-    | '/projects/$projectName'
-    | '/projects'
+  fullPaths: '/' | '/links'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/blog' | '/video-content' | '/projects/$projectName' | '/projects'
-  id:
-    | '__root__'
-    | '/'
-    | '/blog'
-    | '/video-content'
-    | '/projects/$projectName'
-    | '/projects/'
+  to: '/' | '/links'
+  id: '__root__' | '/' | '/links'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  BlogRoute: typeof BlogRoute
-  VideoContentRoute: typeof VideoContentRoute
-  ProjectsProjectNameRoute: typeof ProjectsProjectNameRoute
-  ProjectsIndexRoute: typeof ProjectsIndexRoute
+  LinksRoute: typeof LinksRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/video-content': {
-      id: '/video-content'
-      path: '/video-content'
-      fullPath: '/video-content'
-      preLoaderRoute: typeof VideoContentRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
+    '/links': {
+      id: '/links'
+      path: '/links'
+      fullPath: '/links'
+      preLoaderRoute: typeof LinksRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -113,29 +65,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/projects/': {
-      id: '/projects/'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projects/$projectName': {
-      id: '/projects/$projectName'
-      path: '/projects/$projectName'
-      fullPath: '/projects/$projectName'
-      preLoaderRoute: typeof ProjectsProjectNameRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  BlogRoute: BlogRoute,
-  VideoContentRoute: VideoContentRoute,
-  ProjectsProjectNameRoute: ProjectsProjectNameRoute,
-  ProjectsIndexRoute: ProjectsIndexRoute,
+  LinksRoute: LinksRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
