@@ -16,10 +16,6 @@ function RootComponent() {
           <Outlet />
         </div>
 
-        {/* <div className='text-center'> */}
-        {/*   <Footer /> */}
-        {/* </div> */}
-        {/**/}
       </div>    </React.Fragment>
   )
 }

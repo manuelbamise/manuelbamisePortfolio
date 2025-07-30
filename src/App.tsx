@@ -7,6 +7,7 @@ import { Button } from './components/ui/button'
 import img from "@/assets/img/img001.jpeg"
 import { BsTelegram, BsTwitterX } from 'react-icons/bs'
 import ExperienceSection from './components/sections/ExperienceSection'
+import { motion } from "motion/react"
 
 
 
@@ -14,19 +15,31 @@ import ExperienceSection from './components/sections/ExperienceSection'
 
 export default function App() {
   return (
-    <div className="container mx-auto px-4 py-6 text-lg md:w-[50vw] text-black dark:text-white">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+
+      className="container mx-auto px-4 py-6 text-lg md:w-[50vw] text-black dark:text-white">
 
       {/* Profile Image */}
-      <div className="flex justify-center mb-6">
+      <motion.div
+        initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 0.6, ease: 'easeInOut' }}
+        className="flex justify-center mb-6">
         <img
           src={img}
           alt="profile avatar"
           className="rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border"
         />
-      </div>
+      </motion.div>
 
       {/* Intro */}
-      <div className="text-center space-y-4">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5, ease: 'easeIn' }}
+
+        className="text-center space-y-4">
         <h1 className="text-4xl sm:text-5xl font-semibold">Hey, I'm Bamise.</h1>
         <h2 className="text-2xl sm:text-3xl font-bold capitalize">Software Engineer & Digital Creator</h2>
         <p className="text-gray-700 dark:text-gray-300">
@@ -41,9 +54,14 @@ export default function App() {
             Open to Opportunities
           </Badge>
         </div>
-      </div>
+      </motion.div>
 
-      <div className=' mt-12'>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5, ease: 'easeOut' }}
+
+        className=' mt-12'>
         <p className='font-semibold text-2xl'>About</p>
         <p>I'm bamise. Software engineer with over 6 years of experience based in Nigeria.</p>
 
@@ -63,10 +81,15 @@ export default function App() {
         <p className='mt-3'>When i'm not coding. I'm reading, watching anime or raking up points in chess(I think my ELO rating is at 400 now). </p>
         <span>One piece is overrated, watching only isekai doesn't make you an anime fan, Eren yeager was right.</span>
         <p className='mt-3'>I'm not just a developer. I'm a systems thinker who builds with purpose</p>
-      </div>
+      </motion.div>
 
       {/* Substack Newsletter */}
-      <section className="rounded-xl shadow-md p-6 mt-12">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5, ease: 'easeOut' }}
+
+        className="rounded-xl shadow-md p-6 mt-12">
         <h3 className="text-2xl font-semibold text-center mb-2">Subscribe to the newsletter</h3>
         <p className="text-center mb-4">Everything and nothing at the same time..
 
@@ -94,12 +117,17 @@ export default function App() {
             </a>
           </Button>
         </div>
-      </section>
+      </motion.section>
 
       {/* Work Experience */}
-      <section className="mt-12">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5, ease: 'easeInOut' }}
+
+        className="mt-12">
         <ExperienceSection />
-      </section>
+      </motion.section>
 
       {/* Resume Download */}
       <div className="flex justify-center mt-12">
@@ -153,7 +181,7 @@ export default function App() {
           </Button>
         </div>
       </section>
-    </div>
+    </motion.div>
   )
 }
 

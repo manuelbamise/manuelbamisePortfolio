@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link, useRouter } from '@tanstack/react-router';
 import { Home, Link2, Menu, X } from 'lucide-react';
 import ThemeSwitcher from '../../lib/theme-config/themeSwitcher.tsx';
+import { motion } from "motion/react"
 
 export const GlassPillNav: React.FC = () => {
   type navItemTypes = 'Home' | 'links' | 'ThemeSwitcher';
@@ -36,7 +37,13 @@ export const GlassPillNav: React.FC = () => {
   }, [location, navItems]);
 
   return (
-    <div className=" md:px-6 mt-4 bg-white/30 md:bg-transparent dark:bg-transparent  flex items-center md:justify-center justify-end  py-6 sticky top-0 z-4"
+    <motion.div
+
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.5, ease: 'easeIn' }}
+
+      className=" md:px-6 mt-4 bg-white/30 md:bg-transparent dark:bg-transparent  flex items-center md:justify-center justify-end  py-6 sticky top-0 z-4"
     >
       {/* Mobile hamburger */}
       <div className="md:hidden  outline-white mt-4 mr-4">
@@ -74,6 +81,6 @@ export const GlassPillNav: React.FC = () => {
             {item.component}
           </a></div>))}
       </div>
-    </div>
+    </motion.div>
   );
 };

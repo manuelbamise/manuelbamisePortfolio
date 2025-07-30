@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import img from '@/assets/img/img001.jpeg'
 import { Button } from '@/components/ui/button'
+import { motion } from "motion/react"
 import { BsDiscord, BsGithub, BsLinkedin, BsSubstack, BsTelegram, BsTiktok, BsTwitterX, BsYoutube } from 'react-icons/bs'
 
 export const Route = createFileRoute('/links')({
@@ -27,16 +28,27 @@ function RouteComponent() {
 
 
   return <>
-    <div className="container mx-auto px-4 py-6 text-lg md:w-[50vw] text-black dark:text-white">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.5, ease: 'easeIn' }}
+
+
+
+      className="container mx-auto px-4 py-6 text-lg md:w-[50vw] text-black dark:text-white">
 
       {/* Profile Image */}
-      <div className="flex flex-col items-center justify-center mb-6">
+      <motion.div
+        initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 0.6, ease: 'easeInOut' }}
+
+
+        className="flex flex-col items-center justify-center mb-6">
         <img
           src={img}
           alt="profile avatar"
           className="rounded-full w-25 h-25 md:w-30 md:h-30 object-cover border"
         />
-      </div>
+      </motion.div>
 
       <div className='flex flex-col items-center justify-center gap-2'>
 
@@ -44,7 +56,13 @@ function RouteComponent() {
         <p>Software engineer & Digital creator</p>
       </div>
 
-      <div className='flex flex-col items-center justify-center gap-2 mt-10 border '>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5, ease: 'easeOut' }}
+
+
+        className='flex flex-col items-center justify-center gap-2 mt-10'>
 
         {mainLinks && mainLinks.map((link, index) => (
           <Button
@@ -66,7 +84,7 @@ function RouteComponent() {
 
 
         ))}
-      </div>
+      </motion.div>
 
       <div className="flex items-center justify-center mt-12 gap-5">
 
@@ -89,7 +107,7 @@ function RouteComponent() {
         ))}
       </div>
 
-    </div>
+    </motion.div>
 
 
 
