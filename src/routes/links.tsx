@@ -14,7 +14,7 @@ function RouteComponent() {
     { component: <BsYoutube />, location: 'https://youtube.com/@manuelbamise1' },
     { component: <BsLinkedin />, location: 'https://www.linkedin.com/in/emmanuel-t-5197512b2/' },
     { component: <BsTiktok />, location: 'https://www.tiktok.com/@manuelbamise' },
-    { component: <BsDiscord />, location: 'https://discord.gg/kEzbbUJCJd' },
+    { component: <BsDiscord />, location: 'https://discord.com/invite/hHcFMAuuxD' },
     { component: <BsTwitterX />, location: 'https://x.com/@manuelbamise' },
   ]
 
