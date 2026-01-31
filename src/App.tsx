@@ -140,7 +140,7 @@ export default function App() {
             asChild
           >
             <a
-              href="https://drive.google.com/file/d/1CIbRQT92-7wCc5oizgOkDFkKJKvM8uE4/view?usp=drive_link"
+              href="https://drive.google.com/file/d/19zZw8VV74FMddVcyNN9TaQpM-beCR2Ef/view?usp=drive_link"
               target="_blank"
             >
               Download resume <FileSpreadsheet className="ml-2" />
@@ -161,10 +161,11 @@ export default function App() {
               asChild
             >
               <a
-                href="https://x.com/@manuelbamise"
+                href="https://x.com/@bamise114"
                 target="_blank"
               >
                 <BsTwitterX size={30} />
+                
               </a>
             </Button>
 
@@ -175,7 +176,7 @@ export default function App() {
               asChild
             >
               <a
-                href="https://t.me/manuelbamise"
+                href="https://t.me/bamise114"
                 target="_blank"
               >
                 <BsTelegram size={30} />
