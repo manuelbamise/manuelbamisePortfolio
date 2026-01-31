@@ -11,16 +11,15 @@ export const Route = createFileRoute('/links')({
 function RouteComponent() {
 
   const bottomLinks = [
-    { component: <BsYoutube />, location: 'https://youtube.com/@manuelbamise1' },
-    { component: <BsLinkedin />, location: 'https://www.linkedin.com/in/emmanuel-t-5197512b2/' },
-    { component: <BsTiktok />, location: 'https://www.tiktok.com/@manuelbamise' },
-    { component: <BsDiscord />, location: 'https://discord.com/invite/hHcFMAuuxD' },
-    { component: <BsTwitterX />, location: 'https://x.com/@manuelbamise' },
+    { component: <BsYoutube />, location: 'https://youtube.com/@bamise114' },
+    /*{ component: <BsLinkedin />, location: 'https://www.linkedin.com/in/emmanuel-t-5197512b2/' },*/
+    { component: <BsTiktok />, location: 'https://www.tiktok.com/@bamise114' },
+    { component: <BsTwitterX />, location: 'https://x.com/@bamise114' },
   ]
 
   const mainLinks = [
     { component: <BsGithub />, location: 'https://github.com/manuelbamise', text: 'checkout my projects' },
-    { component: <BsTelegram />, location: 'https://t.me/manuelbamise', text: 'send me a DM' },
+    { component: <BsTelegram />, location: 'https://t.me/bamise_channel', text: 'Join my channel' },
     { component: <BsSubstack />, location: 'https://manuelbamise1.substack.com/', text: 'read my articles' },
     // { component: <BsSpotify />, location: '#', text: 'podcast on spotify' },
   ]
