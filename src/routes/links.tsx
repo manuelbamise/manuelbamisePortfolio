@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import img from '@/assets/img/img001.jpeg'
 import { Button } from '@/components/ui/button'
 import { motion } from "motion/react"
-import { BsDiscord, BsGithub, BsLinkedin, BsSubstack, BsTelegram, BsTiktok, BsTwitterX, BsYoutube } from 'react-icons/bs'
+import { BsGithub, BsSubstack, BsTelegram, BsTiktok, BsTwitterX, BsYoutube } from 'react-icons/bs'
 
 export const Route = createFileRoute('/links')({
   component: RouteComponent,
